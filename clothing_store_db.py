@@ -14,7 +14,7 @@ class ClothingStoreDB:
     def __init__(self, master):
         self.master = master
         self.master.title("Clothing Store Database")
-        self.master.geometry("800x600")
+        self.master.geometry("1000x700")  # Updated window size
 
         self.conn = sqlite3.connect("clothing_store.db")
         self.cursor = self.conn.cursor()
@@ -205,8 +205,13 @@ class ClothingStoreDB:
         self.item_name_entry.grid(row=0, column=1, padx=5, pady=5)
 
         ttk.Label(add_item_tab, text="Category:").grid(row=1, column=0, padx=5, pady=5, sticky="e")
-        self.category_entry = ttk.Entry(add_item_tab)
-        self.category_entry.grid(row=1, column=1, padx=5, pady=5)
+        self.category_combobox = ttk.Combobox(add_item_tab, values=[
+            "T-Shirts", "Jeans", "Dresses", "Skirts", "Jackets", "Sweaters",
+            "Shorts", "Pants", "Blouses", "Suits", "Activewear", "Underwear",
+            "Socks", "Accessories"
+        ])
+        self.category_combobox.grid(row=1, column=1, padx=5, pady=5)
+        self.category_combobox.set("Select a category")
 
         ttk.Label(add_item_tab, text="Price:").grid(row=2, column=0, padx=5, pady=5, sticky="e")
         self.price_entry = ttk.Entry(add_item_tab)
@@ -311,7 +316,8 @@ class ClothingStoreDB:
                 INSERT INTO inventory (item_name, category, base_price, description)
                 VALUES (?, ?, ?, ?)
             ''', (
-                self.item_name_entry.get(), self.category_entry.get(), encrypted_price, self.description_entry.get()))
+                self.item_name_entry.get(), self.category_combobox.get(), encrypted_price,
+                self.description_entry.get()))
             inventory_id = self.cursor.lastrowid
             self.cursor.execute('''
                 INSERT INTO inventory_sizes (inventory_id, size, quantity)
@@ -404,7 +410,7 @@ class ClothingStoreDB:
 
     def clear_add_item_fields(self):
         self.item_name_entry.delete(0, tk.END)
-        self.category_entry.delete(0, tk.END)
+        self.category_combobox.set("Select a category")
         self.price_entry.delete(0, tk.END)
         self.size_entry.delete(0, tk.END)
         self.quantity_entry.delete(0, tk.END)
@@ -547,21 +553,43 @@ class ClothingStoreDB:
         self.refresh_customers()
 
     def add_customer(self):
-        name = simpledialog.askstring("Add Customer", "Enter customer name:")
-        if name:
-            email = simpledialog.askstring("Add Customer", "Enter customer email:")
-            phone = simpledialog.askstring("Add Customer", "Enter customer phone:")
+        add_customer_window = tk.Toplevel(self.master)
+        add_customer_window.title("Add Customer")
+        add_customer_window.geometry("400x300")
 
-            try:
-                self.cursor.execute('''
-                INSERT INTO customers (name, email, phone)
-                VALUES (?, ?, ?)
-                ''', (name, email, phone))
-                self.conn.commit()
-                self.refresh_customers()
-                messagebox.showinfo("Success", "Customer added successfully")
-            except Exception as e:
-                messagebox.showerror("Error", f"Failed to add customer: {str(e)}")
+        ttk.Label(add_customer_window, text="Name:").grid(row=0, column=0, padx=5, pady=5, sticky="e")
+        name_entry = ttk.Entry(add_customer_window)
+        name_entry.grid(row=0, column=1, padx=5, pady=5)
+
+        ttk.Label(add_customer_window, text="Email:").grid(row=1, column=0, padx=5, pady=5, sticky="e")
+        email_entry = ttk.Entry(add_customer_window)
+        email_entry.grid(row=1, column=1, padx=5, pady=5)
+
+        ttk.Label(add_customer_window, text="Phone:").grid(row=2, column=0, padx=5, pady=5, sticky="e")
+        phone_entry = ttk.Entry(add_customer_window)
+        phone_entry.grid(row=2, column=1, padx=5, pady=5)
+
+        def save_customer():
+            name = name_entry.get()
+            email = email_entry.get()
+            phone = phone_entry.get()
+
+            if name and email:
+                try:
+                    self.cursor.execute('''
+                    INSERT INTO customers (name, email, phone)
+                    VALUES (?, ?, ?)
+                    ''', (name, email, phone))
+                    self.conn.commit()
+                    self.refresh_customers()
+                    messagebox.showinfo("Success", "Customer added successfully")
+                    add_customer_window.destroy()
+                except Exception as e:
+                    messagebox.showerror("Error", f"Failed to add customer: {str(e)}")
+            else:
+                messagebox.showwarning("Validation Error", "Name and Email are required fields")
+
+        ttk.Button(add_customer_window, text="Save", command=save_customer).grid(row=3, column=0, columnspan=2, pady=20)
 
     def search_customers(self):
         search_term = self.customer_search_entry.get()
@@ -667,8 +695,8 @@ class ClothingStoreDB:
 
             try:
                 self.cursor.execute('''
-                    INSERT INTO employees (name, position, hire_date, salary)
-                    VALUES (?, ?, ?, ?)
+                INSERT INTO employees (name, position, hire_date, salary)
+                VALUES (?, ?, ?, ?)
                 ''', (name, position, hire_date, salary))
                 self.conn.commit()
                 self.refresh_employees()
