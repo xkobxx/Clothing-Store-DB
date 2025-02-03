@@ -1,0 +1,14 @@
+2025-02-03 01:18:21,334 - INFO - Database schema created successfully
+2025-02-03 01:18:21,336 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 01:18:24,913 - INFO - Database schema created successfully
+2025-02-03 01:18:24,914 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 01:18:27,424 - INFO - Database schema created successfully
+2025-02-03 01:18:27,426 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 01:18:28,401 - INFO - Database schema created successfully
+2025-02-03 01:18:28,402 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 01:18:29,538 - INFO - Database schema created successfully
+2025-02-03 01:18:29,539 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 01:19:34,680 - INFO - Database schema created successfully
+2025-02-03 01:19:34,681 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 01:20:10,782 - INFO - Database schema created successfully
+2025-02-03 01:20:10,784 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'

@@ -1,0 +1,7 @@
+
+Test Execution Report
+====================
+Date: 2025-02-03 01:21:19
+Status: Failure
+
+Coverage report has been generated in the coverage_report directory.
