@@ -27,7 +27,7 @@ This Clothing Store Database Management System is a comprehensive solution for m
 
 1. Clone the repository or download the source code:
    \`\`\`
-   git clone https://github.com/your-username/clothing-store-db.git
+   git clone https://github.com/xkobxx/Clothing-Store-DB
    cd clothing-store-db
    \`\`\`
 
