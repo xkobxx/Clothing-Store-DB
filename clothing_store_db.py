@@ -3,8 +3,7 @@ import base64
 import io
 import sqlite3
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
-
+from tkinter import ttk, messagebox, filedialog, simpledialog
 from Cryptodome.Cipher import AES
 from PIL import Image, ImageTk
 
@@ -21,7 +20,7 @@ class ClothingStoreDB:
         self.cursor = self.conn.cursor()
         self.create_tables()
         self.check_table_structure()
-        self.update_inventory_sizes()  # Added this line
+        self.update_inventory_sizes()
 
         self.notebook = ttk.Notebook(self.master)
         self.notebook.pack(expand=True, fill="both", padx=10, pady=10)
@@ -30,7 +29,8 @@ class ClothingStoreDB:
         self.create_add_item_tab()
         self.create_update_delete_tab()
         self.create_sales_report_tab()
-        self.create_customers_tab()  # Add this line
+        self.create_customers_tab()
+        self.create_employees_tab()
 
     def create_tables(self):
         self.cursor.execute('''
@@ -79,6 +79,16 @@ class ClothingStoreDB:
         name TEXT NOT NULL,
         email TEXT UNIQUE,
         phone TEXT
+    )
+    ''')
+
+        self.cursor.execute('''
+    CREATE TABLE IF NOT EXISTS employees (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        position TEXT,
+        hire_date TEXT,
+        salary REAL
     )
     ''')
 
@@ -138,6 +148,15 @@ class ClothingStoreDB:
         inventory_tab = ttk.Frame(self.notebook)
         self.notebook.add(inventory_tab, text="Inventory")
 
+        # Search frame
+        search_frame = ttk.Frame(inventory_tab)
+        search_frame.pack(fill="x", padx=10, pady=5)
+
+        ttk.Label(search_frame, text="Search:").pack(side="left", padx=5)
+        self.inventory_search_entry = ttk.Entry(search_frame)
+        self.inventory_search_entry.pack(side="left", expand=True, fill="x", padx=5)
+        ttk.Button(search_frame, text="Search", command=self.search_inventory).pack(side="left", padx=5)
+
         self.inventory_tree = ttk.Treeview(inventory_tab,
                                            columns=("ID", "Name", "Category", "Price", "Size", "Quantity"),
                                            show="headings")
@@ -175,7 +194,7 @@ class ClothingStoreDB:
                     row[5]))
         except Exception as e:
             messagebox.showerror("Error", f"Failed to refresh inventory: {str(e)}")
-            print(f"Error details: {str(e)}")  # Add this line for debugging
+            print(f"Error details: {str(e)}")
 
     def create_add_item_tab(self):
         add_item_tab = ttk.Frame(self.notebook)
@@ -499,6 +518,16 @@ class ClothingStoreDB:
         customers_tab = ttk.Frame(self.notebook)
         self.notebook.add(customers_tab, text="Customers")
 
+        # Search frame
+        search_frame = ttk.Frame(customers_tab)
+        search_frame.pack(fill="x", padx=10, pady=5)
+
+        ttk.Label(search_frame, text="Search:").pack(side="left", padx=5)
+        self.customer_search_entry = ttk.Entry(search_frame)
+        self.customer_search_entry.pack(side="left", expand=True, fill="x", padx=5)
+        ttk.Button(search_frame, text="Search", command=self.search_customers).pack(side="left", padx=5)
+
+        # Treeview
         self.customers_tree = ttk.Treeview(customers_tab,
                                            columns=("ID", "Name", "Email", "Phone"),
                                            show="headings")
@@ -508,10 +537,67 @@ class ClothingStoreDB:
         self.customers_tree.heading("Phone", text="Phone")
         self.customers_tree.pack(expand=True, fill="both", padx=10, pady=10)
 
-        refresh_button = ttk.Button(customers_tab, text="Refresh", command=self.refresh_customers)
-        refresh_button.pack(pady=10)
+        # Buttons
+        button_frame = ttk.Frame(customers_tab)
+        button_frame.pack(fill="x", padx=10, pady=5)
+
+        ttk.Button(button_frame, text="Add Customer", command=self.add_customer).pack(side="left", padx=5)
+        ttk.Button(button_frame, text="Refresh", command=self.refresh_customers).pack(side="left", padx=5)
 
         self.refresh_customers()
+
+    def add_customer(self):
+        name = simpledialog.askstring("Add Customer", "Enter customer name:")
+        if name:
+            email = simpledialog.askstring("Add Customer", "Enter customer email:")
+            phone = simpledialog.askstring("Add Customer", "Enter customer phone:")
+
+            try:
+                self.cursor.execute('''
+                INSERT INTO customers (name, email, phone)
+                VALUES (?, ?, ?)
+                ''', (name, email, phone))
+                self.conn.commit()
+                self.refresh_customers()
+                messagebox.showinfo("Success", "Customer added successfully")
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to add customer: {str(e)}")
+
+    def search_customers(self):
+        search_term = self.customer_search_entry.get()
+        try:
+            self.customers_tree.delete(*self.customers_tree.get_children())
+            self.cursor.execute('''
+            SELECT id, name, email, phone FROM customers
+            WHERE name LIKE ? OR email LIKE ? OR phone LIKE ?
+            ''', (f'%{search_term}%', f'%{search_term}%', f'%{search_term}%'))
+            for row in self.cursor.fetchall():
+                self.customers_tree.insert("", "end", values=row)
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to search customers: {str(e)}")
+
+    def search_inventory(self):
+        search_term = self.inventory_search_entry.get()
+        try:
+            self.inventory_tree.delete(*self.inventory_tree.get_children())
+            self.cursor.execute('''
+            SELECT i.id, i.item_name, COALESCE(i.category, 'N/A') as category, i.base_price,
+                   COALESCE(inv_sizes.size, 'N/A') as size, COALESCE(inv_sizes.quantity, 0) as quantity
+            FROM inventory i
+            LEFT JOIN inventory_sizes inv_sizes ON i.id = inv_sizes.inventory_id
+            WHERE i.item_name LIKE ? OR i.category LIKE ?
+            ''', (f'%{search_term}%', f'%{search_term}%'))
+            for row in self.cursor.fetchall():
+                try:
+                    decrypted_price = self.decrypt_data(str(row[3]))
+                except:
+                    decrypted_price = "N/A"
+                self.inventory_tree.insert("", "end", values=(
+                    row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4],
+                    row[5]))
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to search inventory: {str(e)}")
+            print(f"Error details: {str(e)}")
 
     def refresh_customers(self):
         try:
@@ -538,6 +624,79 @@ class ClothingStoreDB:
         except Exception as e:
             messagebox.showerror("Error", f"Failed to update inventory sizes: {str(e)}")
             print(f"Error details: {str(e)}")
+
+    def create_employees_tab(self):
+        employees_tab = ttk.Frame(self.notebook)
+        self.notebook.add(employees_tab, text="Employees")
+
+        # Search frame
+        search_frame = ttk.Frame(employees_tab)
+        search_frame.pack(fill="x", padx=10, pady=5)
+
+        ttk.Label(search_frame, text="Search:").pack(side="left", padx=5)
+        self.employee_search_entry = ttk.Entry(search_frame)
+        self.employee_search_entry.pack(side="left", expand=True, fill="x", padx=5)
+        ttk.Button(search_frame, text="Search", command=self.search_employees).pack(side="left", padx=5)
+
+        # Treeview
+        self.employees_tree = ttk.Treeview(employees_tab,
+                                           columns=("ID", "Name", "Position", "Hire Date", "Salary"),
+                                           show="headings")
+        self.employees_tree.heading("ID", text="ID")
+        self.employees_tree.heading("Name", text="Name")
+        self.employees_tree.heading("Position", text="Position")
+        self.employees_tree.heading("Hire Date", text="Hire Date")
+        self.employees_tree.heading("Salary", text="Salary")
+        self.employees_tree.pack(expand=True, fill="both", padx=10, pady=10)
+
+        # Buttons
+        button_frame = ttk.Frame(employees_tab)
+        button_frame.pack(fill="x", padx=10, pady=5)
+
+        ttk.Button(button_frame, text="Add Employee", command=self.add_employee).pack(side="left", padx=5)
+        ttk.Button(button_frame, text="Refresh", command=self.refresh_employees).pack(side="left", padx=5)
+
+        self.refresh_employees()
+
+    def add_employee(self):
+        name = simpledialog.askstring("Add Employee", "Enter employee name:")
+        if name:
+            position = simpledialog.askstring("Add Employee", "Enter employee position:")
+            hire_date = simpledialog.askstring("Add Employee", "Enter hire date (YYYY-MM-DD):")
+            salary = simpledialog.askfloat("Add Employee", "Enter employee salary:")
+
+            try:
+                self.cursor.execute('''
+                    INSERT INTO employees (name, position, hire_date, salary)
+                    VALUES (?, ?, ?, ?)
+                ''', (name, position, hire_date, salary))
+                self.conn.commit()
+                self.refresh_employees()
+                messagebox.showinfo("Success", "Employee added successfully")
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to add employee: {str(e)}")
+
+    def refresh_employees(self):
+        try:
+            self.employees_tree.delete(*self.employees_tree.get_children())
+            self.cursor.execute('SELECT id, name, position, hire_date, salary FROM employees')
+            for row in self.cursor.fetchall():
+                self.employees_tree.insert("", "end", values=row)
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to refresh employees: {str(e)}")
+
+    def search_employees(self):
+        search_term = self.employee_search_entry.get()
+        try:
+            self.employees_tree.delete(*self.employees_tree.get_children())
+            self.cursor.execute('''
+            SELECT id, name, position, hire_date, salary FROM employees
+            WHERE name LIKE ? OR position LIKE ? OR hire_date LIKE ?
+            ''', (f'%{search_term}%', f'%{search_term}%', f'%{search_term}%'))
+            for row in self.cursor.fetchall():
+                self.employees_tree.insert("", "end", values=row)
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to search employees: {str(e)}")
 
 
 def cleanup():
