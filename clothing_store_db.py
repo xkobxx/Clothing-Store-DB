@@ -9,6 +9,7 @@ from PIL import Image, ImageTk
 import xml.etree.ElementTree as ET
 import logging
 from config import *
+from datetime import datetime
 
 # Set up logging
 logging.basicConfig(filename=LOG_FILE, level=LOG_LEVEL,
@@ -39,6 +40,11 @@ class ClothingStoreDB:
         self.create_sales_report_tab()
         self.create_customers_tab()
         self.create_employees_tab()
+
+        try:
+            self.update_id_entry.bind('<FocusOut>', self.on_id_entry_change)
+        except Exception as e:
+            logging.error(f"Error binding event to update_id_entry: {e}")
 
     def create_tables(self):
         """Create necessary tables if they don't exist."""
@@ -109,6 +115,18 @@ class ClothingStoreDB:
             )
             ''')
 
+            # Price change log table
+            self.cursor.execute(f'''
+            CREATE TABLE IF NOT EXISTS price_change_log (
+                id INTEGER PRIMARY KEY,
+                inventory_id INTEGER,
+                old_price REAL,
+                new_price REAL,
+                change_date TEXT,
+                FOREIGN KEY (inventory_id) REFERENCES {INVENTORY_TABLE} (id)
+            )
+            ''')
+
             self.conn.commit()
             logging.info("Tables created successfully")
         except sqlite3.Error as e:
@@ -135,17 +153,23 @@ class ClothingStoreDB:
         """Encrypt sensitive data."""
         cipher = AES.new(SECRET_KEY, AES.MODE_EAX)
         nonce = cipher.nonce
-        ciphertext, tag = cipher.encrypt_and_digest(data.encode('utf-8'))
-        return base64.b64encode(nonce + ciphertext).decode('utf-8')
+        ciphertext, tag = cipher.encrypt_and_digest(str(data).encode('utf-8'))
+        return base64.b64encode(nonce + ciphertext + tag).decode('utf-8')
 
     @staticmethod
     def decrypt_data(enc_data):
         """Decrypt sensitive data."""
-        enc_data = base64.b64decode(enc_data)
-        nonce = enc_data[:16]
-        ciphertext = enc_data[16:]
-        cipher = AES.new(SECRET_KEY, AES.MODE_EAX, nonce=nonce)
-        return cipher.decrypt(ciphertext).decode('utf-8')
+        try:
+            enc_data = base64.b64decode(enc_data)
+            nonce = enc_data[:16]
+            ciphertext = enc_data[16:-16]
+            tag = enc_data[-16:]
+            cipher = AES.new(SECRET_KEY, AES.MODE_EAX, nonce=nonce)
+            decrypted_data = cipher.decrypt_and_verify(ciphertext, tag)
+            return decrypted_data.decode('utf-8')
+        except (ValueError, KeyError, base64.binascii.Error) as e:
+            logging.error(f"Decryption failed: {str(e)}")
+            return None
 
     def create_inventory_tab(self):
         """Create and populate the inventory tab."""
@@ -194,15 +218,21 @@ class ClothingStoreDB:
             for row in self.cursor.fetchall():
                 try:
                     decrypted_price = self.decrypt_data(str(row[3]))
-                    xml_data = ET.fromstring(row[4]) if row[4] else None
-                    colors = ', '.join([color.get('name') for color in
-                                        xml_data.findall('.//color')]) if xml_data is not None else "N/A"
+                    colors = "N/A"
+                    if row[4]:
+                        try:
+                            xml_data = ET.fromstring(row[4])
+                            color_elements = xml_data.findall('.//color')
+                            if color_elements:
+                                colors = ', '.join([color.get('name', '') for color in color_elements])
+                        except ET.ParseError:
+                            logging.error(f"Error parsing XML data for item ID {row[0]}")
                 except Exception as e:
                     logging.error(f"Error processing inventory row {row[0]}: {e}")
-                    decrypted_price = "N/A"
+                    decrypted_price = None
                     colors = "N/A"
                 self.inventory_tree.insert("", "end", values=(
-                    row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A",
+                    row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price is not None else "Price Error",
                     row[5] or "N/A", row[6] or "0", colors))
             logging.info("Inventory refreshed successfully")
         except sqlite3.Error as e:
@@ -268,13 +298,13 @@ class ClothingStoreDB:
                 VALUES (?, ?, ?, ?, ?)
             ''', (
                 self.item_name_entry.get(), self.category_combobox.get(), encrypted_price,
-                self.description_entry.get(), ET.tostring(xml_data).decode()
+                self.description_entry.get(), xml_data
             ))
             inventory_id = self.cursor.lastrowid
             self.cursor.execute(f'''
                 INSERT INTO {INVENTORY_SIZES_TABLE} (inventory_id, size, quantity)
                 VALUES (?, ?, ?)
-            ''', (inventory_id, self.size_entry.get(), self.quantity_entry.get()))
+            ''', (inventory_id, self.size_entry.get(), int(self.quantity_entry.get())))
             if self.image_path:
                 with open(self.image_path, "rb") as img_file:
                     image_blob = img_file.read()
@@ -295,8 +325,8 @@ class ClothingStoreDB:
         root = ET.Element("item_details")
         colors_elem = ET.SubElement(root, "colors")
         for color in colors:
-            ET.SubElement(colors_elem, "color", name=color)
-        return root
+            ET.SubElement(colors_elem, "color", name=color.strip())
+        return ET.tostring(root, encoding='unicode')
 
     def create_update_delete_tab(self):
         """Create the tab for updating and deleting inventory items."""
@@ -306,6 +336,7 @@ class ClothingStoreDB:
         ttk.Label(update_delete_tab, text="Item ID:").grid(row=0, column=0, padx=5, pady=5, sticky="e")
         self.update_id_entry = ttk.Entry(update_delete_tab)
         self.update_id_entry.grid(row=0, column=1, padx=5, pady=5)
+        self.update_id_entry.bind('<FocusOut>', self.on_id_entry_change)
 
         ttk.Label(update_delete_tab, text="Item Name:").grid(row=1, column=0, padx=5, pady=5, sticky="e")
         self.update_name_entry = ttk.Entry(update_delete_tab)
@@ -337,6 +368,97 @@ class ClothingStoreDB:
                                                                                          pady=10)
         ttk.Button(update_delete_tab, text="Delete Item", command=self.delete_item).grid(row=9, column=0, columnspan=2,
                                                                                          pady=10)
+
+    def on_id_entry_change(self, event):
+        try:
+            item_id = self.update_id_entry.get()
+            if item_id:
+                self.load_item()
+        except Exception as e:
+            logging.error(f"Error in on_id_entry_change: {e}")
+            messagebox.showerror("Error", f"An error occurred: {e}")
+
+    def load_item(self):
+        """Load an item's details for updating."""
+        item_id = self.update_id_entry.get().strip()
+        if not item_id:
+            messagebox.showwarning("Input Required", "Please enter an Item ID")
+            return
+
+        try:
+            # Validate item ID
+            try:
+                item_id = int(item_id)
+            except ValueError:
+                messagebox.showerror("Validation Error", "Item ID must be a number")
+                return
+
+            # Query database
+            self.cursor.execute(f'''
+                SELECT i.*, inv_sizes.size, inv_sizes.quantity
+                FROM {INVENTORY_TABLE} i
+                LEFT JOIN {INVENTORY_SIZES_TABLE} inv_sizes ON i.id = inv_sizes.inventory_id
+                WHERE i.id = ?
+            ''', (item_id,))
+            item_data = self.cursor.fetchone()
+
+            if not item_data:
+                messagebox.showinfo("Not Found", f"No item found with ID {item_id}")
+                self.clear_update_delete_fields()
+                return
+
+            # Clear existing fields
+            self.clear_update_delete_fields()
+
+            # Populate fields with new data
+            self.update_id_entry.insert(0, str(item_id))
+            self.update_name_entry.insert(0, item_data[1] or '')
+            self.update_category_entry.insert(0, item_data[2] or '')
+
+            # Handle price decryption
+            try:
+                decrypted_price = self.decrypt_data(str(item_data[3]))
+                if decrypted_price is not None:
+                    self.update_price_entry.insert(0, decrypted_price)
+                else:
+                    self.update_price_entry.insert(0, "0.00")
+                    messagebox.showwarning("Decryption Warning",
+                                           "Could not decrypt price. A default value has been set.")
+            except Exception as e:
+                logging.error(f"Error decrypting price for item {item_id}: {e}")
+                self.update_price_entry.insert(0, "0.00")
+                messagebox.showwarning("Decryption Error",
+                                       "Error loading price. A default value has been set.")
+
+            # Handle size and quantity
+            self.update_size_entry.insert(0, item_data[7] if item_data[7] else '')
+            self.update_quantity_entry.insert(0, str(item_data[8]) if item_data[8] is not None else '0')
+
+            # Handle colors from XML
+            try:
+                if item_data[5]:  # item_details field
+                    xml_data = ET.fromstring(item_data[5])
+                    colors = ', '.join([
+                        color.get('name', '')
+                        for color in xml_data.findall('.//color')
+                    ])
+                    self.update_colors_entry.insert(0, colors)
+            except ET.ParseError:
+                logging.error(f"Error parsing XML data for item ID {item_id}")
+                self.update_colors_entry.insert(0, '')
+                messagebox.showwarning("Warning",
+                                       "Could not load color data. Please re-enter colors if needed.")
+
+            logging.info(f"Item loaded for updating: ID {item_id}")
+
+        except sqlite3.Error as e:
+            logging.error(f"Database error loading item: {e}")
+            messagebox.showerror("Database Error",
+                                 "Failed to load item from database. Please try again.")
+        except Exception as e:
+            logging.error(f"Error loading item: {e}")
+            messagebox.showerror("Error",
+                                 "An unexpected error occurred while loading the item.")
 
     def create_sales_report_tab(self):
         """Create the tab for generating sales reports."""
@@ -384,81 +506,80 @@ class ClothingStoreDB:
             self.image_path = file_path
             logging.info(f"Image selected: {file_path}")
 
-    def load_item(self):
-        """Load an item's details for updating."""
-        item_id = self.update_id_entry.get()
-        if not item_id:
-            messagebox.showerror("Error", "Please enter an item ID")
-            return
-
-        try:
-            self.cursor.execute(f'''
-            SELECT i.*, is.size, is.quantity
-            FROM {INVENTORY_TABLE} i
-            JOIN {INVENTORY_SIZES_TABLE} is ON i.id = is.inventory_id
-            WHERE i.id = ?
-            ''', (item_id,))
-            item_data = self.cursor.fetchone()
-
-            if item_data:
-                self.update_name_entry.delete(0, tk.END)
-                self.update_name_entry.insert(0, item_data[1])
-                self.update_category_entry.delete(0, tk.END)
-                self.update_category_entry.insert(0, item_data[2])
-                self.update_price_entry.delete(0, tk.END)
-                self.update_price_entry.insert(0, self.decrypt_data(str(item_data[3])))
-                self.update_size_entry.delete(0, tk.END)
-                self.update_size_entry.insert(0, item_data[7])
-                self.update_quantity_entry.delete(0, tk.END)
-                self.update_quantity_entry.insert(0, item_data[8])
-
-                xml_data = ET.fromstring(item_data[5])
-                colors = ', '.join([color.get('name') for color in xml_data.findall('.//color')])
-                self.update_colors_entry.delete(0, tk.END)
-                self.update_colors_entry.insert(0, colors)
-                logging.info(f"Item loaded for updating: ID {item_id}")
-            else:
-                messagebox.showerror("Error", "Item not found")
-        except sqlite3.Error as e:
-            logging.error(f"Error loading item: {e}")
-            messagebox.showerror("Database Error", f"Failed to load item: {e}")
-
     def update_item(self):
         """Update an existing item in the inventory."""
-        item_id = self.update_id_entry.get()
-        name = self.update_name_entry.get()
-        category = self.update_category_entry.get()
-        price = self.update_price_entry.get()
-        size = self.update_size_entry.get()
-        quantity = self.update_quantity_entry.get()
-        colors = [color.strip() for color in self.update_colors_entry.get().split(',')]
-
-        if not self.validate_input(name, category, price, size, quantity):
+        if not self.validate_update_inputs():
             return
 
+        item_id = int(self.update_id_entry.get().strip())
+        name = self.update_name_entry.get().strip()
+        category = self.update_category_entry.get().strip()
+        new_price = float(self.update_price_entry.get().strip())
+        size = self.update_size_entry.get().strip()
+        quantity = int(self.update_quantity_entry.get().strip())
+        colors = [color.strip() for color in self.update_colors_entry.get().split(',') if color.strip()]
+
         try:
-            encrypted_price = self.encrypt_data(price)
-            xml_data = self.create_xml_data(colors)
+            # Start database transaction
+            self.conn.execute("BEGIN TRANSACTION")
 
+            # Get current price for logging
+            self.cursor.execute(f"SELECT base_price FROM {INVENTORY_TABLE} WHERE id = ?", (item_id,))
+            old_price_encrypted = self.cursor.fetchone()[0]
+            old_price = float(self.decrypt_data(old_price_encrypted))
+
+            # Encrypt new price
+            encrypted_price = self.encrypt_data(str(new_price))
+
+            # Create XML data for colors
+            root = ET.Element("item_details")
+            colors_elem = ET.SubElement(root, "colors")
+            for color in colors:
+                ET.SubElement(colors_elem, "color", name=color)
+            xml_data = ET.tostring(root, encoding='unicode')
+
+            # Update inventory table
             self.cursor.execute(f'''
-            UPDATE {INVENTORY_TABLE}
-            SET item_name = ?, category = ?, base_price = ?, item_details = ?
-            WHERE id = ?
-            ''', (name, category, encrypted_price, ET.tostring(xml_data).decode(), item_id))
+                UPDATE {INVENTORY_TABLE}
+                SET item_name = ?, 
+                    category = ?, 
+                    base_price = ?, 
+                    item_details = ?
+                WHERE id = ?
+            ''', (name, category, encrypted_price, xml_data, item_id))
 
+            # Update inventory sizes table
             self.cursor.execute(f'''
-            UPDATE {INVENTORY_SIZES_TABLE}
-            SET size = ?, quantity = ?
-            WHERE inventory_id = ?
-            ''', (size, int(quantity), item_id))
+                INSERT OR REPLACE INTO {INVENTORY_SIZES_TABLE} 
+                (inventory_id, size, quantity)
+                VALUES (?, ?, ?)
+            ''', (item_id, size, quantity))
 
+            # Log price change if different
+            if abs(old_price - new_price) > 0.001:  # Compare with small epsilon for float comparison
+                self.cursor.execute('''
+                    INSERT INTO price_change_log 
+                    (inventory_id, old_price, new_price, change_date)
+                    VALUES (?, ?, ?, ?)
+                ''', (item_id, old_price, new_price,
+                      datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+
+            # Commit transaction
             self.conn.commit()
             self.refresh_inventory()
             messagebox.showinfo("Success", "Item updated successfully")
             logging.info(f"Item updated: ID {item_id}")
+
         except sqlite3.Error as e:
-            logging.error(f"Error updating item: {e}")
-            messagebox.showerror("Database Error", f"Failed to update item: {e}")
+            self.conn.rollback()
+            logging.error(f"Database error updating item: {e}")
+            messagebox.showerror("Database Error",
+                                 "Failed to update item in database. Please try again.")
+        except Exception as e:
+            self.conn.rollback()
+            logging.error(f"Unexpected error updating item: {e}")
+            messagebox.showerror("Error",
+                                 "An unexpected error occurred. Please try again.")
 
     def delete_item(self):
         """Delete an item from the inventory."""
@@ -532,8 +653,15 @@ class ClothingStoreDB:
                 ttk.Label(details_window, text=f"Quantity: {item_data[8]}").pack(pady=5)
                 ttk.Label(details_window, text=f"Description: {item_data[4]}").pack(pady=5)
 
-                xml_data = ET.fromstring(item_data[5])
-                colors = ', '.join([color.get('name') for color in xml_data.findall('.//color')])
+                colors = "N/A"
+                if item_data[5]:
+                    try:
+                        xml_data = ET.fromstring(item_data[5])
+                        color_elements = xml_data.findall('.//color')
+                        if color_elements:
+                            colors = ', '.join([color.get('name', '') for color in color_elements])
+                    except ET.ParseError:
+                        logging.error(f"Error parsing XML data for item ID {item_id}")
                 ttk.Label(details_window, text=f"Colors: {colors}").pack(pady=5)
 
                 if item_data[9]:
@@ -558,13 +686,18 @@ class ClothingStoreDB:
 
         try:
             price = float(price)
-            quantity = int(quantity)
-        except ValueError:
-            messagebox.showerror("Error", "Invalid price or quantity")
+            if price <= 0:
+                raise ValueError("Price must be a positive number")
+        except ValueError as e:
+            messagebox.showerror("Error", f"Invalid price: {str(e)}")
             return False
 
-        if price <= 0 or quantity <= 0:
-            messagebox.showerror("Error", "Price and quantity must be positive")
+        try:
+            quantity = int(quantity)
+            if quantity < 0:
+                raise ValueError("Quantity must be a non-negative integer")
+        except ValueError as e:
+            messagebox.showerror("Error", f"Invalid quantity: {str(e)}")
             return False
 
         return True
@@ -721,13 +854,21 @@ class ClothingStoreDB:
             WHERE i.item_name LIKE ? OR i.category LIKE ?
             ''', (f'%{search_term}%', f'%{search_term}%'))
             for row in self.cursor.fetchall():
+                colors = "N/A"
+                if row[4]:
+                    try:
+                        xml_data = ET.fromstring(row[4])
+                        color_elements = xml_data.findall('.//color')
+                        if color_elements:
+                            colors = ', '.join([color.get('name', '') for color in color_elements])
+                    except ET.ParseError:
+                        logging.error(f"Error parsing XML data for item ID {row[0]}")
                 try:
                     decrypted_price = self.decrypt_data(str(row[3]))
-                    xml_data = ET.fromstring(row[4])
-                    colors = ', '.join([color.get('name') for color in xml_data.findall('.//color')])
+
                 except:
                     decrypted_price = "N/A"
-                    colors = "N/A"
+
                 self.inventory_tree.insert("", "end", values=(
                     row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A",
                     row[5], row[6], colors))
@@ -848,6 +989,65 @@ class ClothingStoreDB:
         except sqlite3.Error as e:
             logging.error(f"Error searching employees: {e}")
             messagebox.showerror("Database Error", f"Failed to search employees: {e}")
+
+    def validate_update_inputs(self):
+        """Validate all inputs in the update form."""
+        try:
+            # Validate item ID
+            item_id = self.update_id_entry.get().strip()
+            if not item_id:
+                raise ValueError("Item ID is required")
+            try:
+                int(item_id)
+            except ValueError:
+                raise ValueError("Item ID must be a number")
+
+            # Validate name
+            name = self.update_name_entry.get().strip()
+            if not name:
+                raise ValueError("Item name is required")
+
+            # Validate category
+            category = self.update_category_entry.get().strip()
+            if not category:
+                raise ValueError("Category is required")
+
+            # Validate price
+            price = self.update_price_entry.get().strip()
+            if not price:
+                raise ValueError("Price is required")
+            try:
+                price_val = float(price)
+                if price_val <= 0:
+                    raise ValueError("Price must be greater than 0")
+            except ValueError as e:
+                if "must be greater than 0" in str(e):
+                    raise e
+                raise ValueError("Price must be a valid number")
+
+            # Validate size
+            size = self.update_size_entry.get().strip()
+            if not size:
+                raise ValueError("Size is required")
+
+            # Validate quantity
+            quantity = self.update_quantity_entry.get().strip()
+            if not quantity:
+                raise ValueError("Quantity is required")
+            try:
+                qty_val = int(quantity)
+                if qty_val < 0:
+                    raise ValueError("Quantity cannot be negative")
+            except ValueError as e:
+                if "cannot be negative" in str(e):
+                    raise e
+                raise ValueError("Quantity must be a whole number")
+
+            return True
+
+        except ValueError as e:
+            messagebox.showerror("Validation Error", str(e))
+            return False
 
 
 def cleanup():

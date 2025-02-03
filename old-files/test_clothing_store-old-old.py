@@ -10,7 +10,7 @@ class TestClothingStoreDB(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Create a test database
-        cls.test_db_path = "test_clothing_store.db"
+        cls.test_db_path = "../test_clothing_store.db"
         if os.path.exists(cls.test_db_path):
             os.remove(cls.test_db_path)
 
