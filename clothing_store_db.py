@@ -219,7 +219,7 @@ class ClothingStoreDB:
                 try:
                     decrypted_price = self.decrypt_data(str(row[3]))
                     colors = "N/A"
-                    if row[4]:
+                    if row[4]:  # item_details field
                         try:
                             xml_data = ET.fromstring(row[4])
                             color_elements = xml_data.findall('.//color')
@@ -227,13 +227,15 @@ class ClothingStoreDB:
                                 colors = ', '.join([color.get('name', '') for color in color_elements])
                         except ET.ParseError:
                             logging.error(f"Error parsing XML data for item ID {row[0]}")
+                            colors = "Error parsing colors"
                 except Exception as e:
                     logging.error(f"Error processing inventory row {row[0]}: {e}")
                     decrypted_price = None
                     colors = "N/A"
                 self.inventory_tree.insert("", "end", values=(
                     row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price is not None else "Price Error",
-                    row[5] or "N/A", row[6] or "0", colors))
+                    row[5] or "N/A", row[6] or "0", colors
+                ))
             logging.info("Inventory refreshed successfully")
         except sqlite3.Error as e:
             logging.error(f"Error refreshing inventory: {e}")
@@ -291,7 +293,8 @@ class ClothingStoreDB:
         try:
             encrypted_price = self.encrypt_data(self.price_entry.get())
             colors = [color.strip() for color in self.colors_entry.get().split(',')]
-            xml_data = self.create_xml_data(colors)
+            quantity = int(self.quantity_entry.get())
+            xml_data = self.create_xml_data(colors, quantity)
 
             self.cursor.execute(f'''
                 INSERT INTO {INVENTORY_TABLE} (item_name, category, base_price, description, item_details)
@@ -320,12 +323,14 @@ class ClothingStoreDB:
             logging.error(f"Error adding item: {e}")
             messagebox.showerror("Database Error", f"Failed to add item: {e}")
 
-    def create_xml_data(self, colors):
-        """Create XML data for item details."""
+    def create_xml_data(self, colors, quantity):
+        """Create XML data for item details including colors and quantity."""
         root = ET.Element("item_details")
         colors_elem = ET.SubElement(root, "colors")
         for color in colors:
             ET.SubElement(colors_elem, "color", name=color.strip())
+        quantity_elem = ET.SubElement(root, "quantity")
+        quantity_elem.text = str(quantity)
         return ET.tostring(root, encoding='unicode')
 
     def create_update_delete_tab(self):
@@ -531,11 +536,13 @@ class ClothingStoreDB:
             # Encrypt new price
             encrypted_price = self.encrypt_data(str(new_price))
 
-            # Create XML data for colors
+            # Create XML data for colors and quantity
             root = ET.Element("item_details")
             colors_elem = ET.SubElement(root, "colors")
             for color in colors:
                 ET.SubElement(colors_elem, "color", name=color)
+            quantity_elem = ET.SubElement(root, "quantity")
+            quantity_elem.text = str(quantity)
             xml_data = ET.tostring(root, encoding='unicode')
 
             # Update inventory table
@@ -572,14 +579,16 @@ class ClothingStoreDB:
 
         except sqlite3.Error as e:
             self.conn.rollback()
-            logging.error(f"Database error updating item: {e}")
+            error_msg = f"Database error updating item: {e}"
+            logging.error(error_msg)
             messagebox.showerror("Database Error",
-                                 "Failed to update item in database. Please try again.")
+                                 f"Failed to update item in database: {e}")
         except Exception as e:
             self.conn.rollback()
-            logging.error(f"Unexpected error updating item: {e}")
+            error_msg = f"Unexpected error updating item: {e}"
+            logging.error(error_msg)
             messagebox.showerror("Error",
-                                 "An unexpected error occurred. Please try again.")
+                                 f"An unexpected error occurred: {e}")
 
     def delete_item(self):
         """Delete an item from the inventory."""
@@ -1020,9 +1029,7 @@ class ClothingStoreDB:
                 price_val = float(price)
                 if price_val <= 0:
                     raise ValueError("Price must be greater than 0")
-            except ValueError as e:
-                if "must be greater than 0" in str(e):
-                    raise e
+            except ValueError:
                 raise ValueError("Price must be a valid number")
 
             # Validate size
@@ -1038,15 +1045,14 @@ class ClothingStoreDB:
                 qty_val = int(quantity)
                 if qty_val < 0:
                     raise ValueError("Quantity cannot be negative")
-            except ValueError as e:
-                if "cannot be negative" in str(e):
-                    raise e
+            except ValueError:
                 raise ValueError("Quantity must be a whole number")
 
             return True
 
         except ValueError as e:
             messagebox.showerror("Validation Error", str(e))
+            logging.error(f"Validation error: {e}")
             return False
 
 

@@ -11,7 +11,7 @@ LOG_FILE = "clothing_store.log"
 LOG_LEVEL = "INFO"
 
 # UI settings
-WINDOW_TITLE = "Clothing Store Database"
+WINDOW_TITLE = "Clothing Store Database System"
 WINDOW_SIZE = "1000x700"
 
 # Table names

@@ -490,3 +490,194 @@
 2025-02-03 09:59:48,893 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
 2025-02-03 09:59:50,244 - ERROR - Error parsing XML data for item ID 1
 2025-02-03 09:59:54,035 - INFO - Item loaded for updating: ID 1
+2025-02-03 11:24:56,256 - INFO - Tables created successfully
+2025-02-03 11:24:56,256 - INFO - Inventory sizes updated
+2025-02-03 11:24:56,262 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:24:56,262 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:24:56,263 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:24:56,263 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:24:56,263 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:24:56,263 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:24:56,263 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:24:56,263 - INFO - Inventory refreshed successfully
+2025-02-03 11:24:56,273 - INFO - Sales report refreshed successfully
+2025-02-03 11:24:56,275 - INFO - Customers list refreshed
+2025-02-03 11:24:56,276 - INFO - Employees list refreshed
+2025-02-03 11:25:03,564 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:25:04,885 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:25:06,690 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:25:31,064 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:25:31,065 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:25:31,065 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:25:31,065 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:25:31,065 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:25:31,065 - INFO - Inventory refreshed successfully
+2025-02-03 11:25:32,376 - INFO - Item updated: ID 2
+2025-02-03 11:28:46,628 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:28:46,630 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:28:46,630 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:28:46,631 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:28:46,631 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:28:46,631 - INFO - Inventory refreshed successfully
+2025-02-03 11:28:48,000 - INFO - Item updated: ID 2
+2025-02-03 11:34:22,407 - INFO - Tables created successfully
+2025-02-03 11:34:22,408 - INFO - Inventory sizes updated
+2025-02-03 11:34:22,417 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:22,418 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:22,418 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:22,418 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:22,419 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:34:22,419 - INFO - Inventory refreshed successfully
+2025-02-03 11:34:22,430 - INFO - Sales report refreshed successfully
+2025-02-03 11:34:22,432 - INFO - Customers list refreshed
+2025-02-03 11:34:22,434 - INFO - Employees list refreshed
+2025-02-03 11:34:32,309 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:32,311 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:32,311 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:32,312 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:32,312 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:34:32,312 - INFO - Inventory refreshed successfully
+2025-02-03 11:34:33,533 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:33,534 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:33,535 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:33,535 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:34:33,536 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:34:33,536 - INFO - Inventory refreshed successfully
+2025-02-03 11:34:45,036 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:34:46,786 - ERROR - Error parsing XML data for item ID 1
+2025-02-03 11:34:48,239 - INFO - Item loaded for updating: ID 1
+2025-02-03 11:35:19,668 - ERROR - Unexpected error updating item: argument should be a bytes-like object or ASCII string, not 'float'
+2025-02-03 11:35:23,900 - ERROR - Unexpected error updating item: argument should be a bytes-like object or ASCII string, not 'float'
+2025-02-03 11:35:34,802 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:35:36,577 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:35:38,296 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:35:43,858 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:35:45,352 - ERROR - Error parsing XML data for item ID 3
+2025-02-03 11:35:46,625 - INFO - Item loaded for updating: ID 3
+2025-02-03 11:36:05,246 - ERROR - Unexpected error updating item: argument should be a bytes-like object or ASCII string, not 'float'
+2025-02-03 11:36:33,451 - ERROR - Unexpected error updating item: argument should be a bytes-like object or ASCII string, not 'float'
+2025-02-03 11:40:51,367 - INFO - Tables created successfully
+2025-02-03 11:40:51,367 - INFO - Inventory sizes updated
+2025-02-03 11:40:51,374 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:40:51,375 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:40:51,375 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:40:51,375 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:40:51,375 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:40:51,376 - INFO - Inventory refreshed successfully
+2025-02-03 11:40:51,385 - INFO - Sales report refreshed successfully
+2025-02-03 11:40:51,390 - INFO - Customers list refreshed
+2025-02-03 11:40:51,392 - INFO - Employees list refreshed
+2025-02-03 11:41:06,347 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:41:07,725 - ERROR - Error parsing XML data for item ID 4
+2025-02-03 11:41:09,385 - INFO - Item loaded for updating: ID 4
+2025-02-03 11:41:20,789 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:41:22,578 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:41:24,159 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:42:06,674 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:42:06,675 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:42:06,676 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:42:06,676 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:42:06,676 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:42:06,676 - INFO - Inventory refreshed successfully
+2025-02-03 11:42:07,832 - INFO - Item updated: ID 2
+2025-02-03 11:48:29,516 - INFO - Tables created successfully
+2025-02-03 11:48:29,516 - INFO - Inventory sizes updated
+2025-02-03 11:48:29,522 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:48:29,523 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:48:29,524 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:48:29,524 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:48:29,524 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:48:29,524 - INFO - Inventory refreshed successfully
+2025-02-03 11:48:29,531 - INFO - Sales report refreshed successfully
+2025-02-03 11:48:29,533 - INFO - Customers list refreshed
+2025-02-03 11:48:29,537 - INFO - Employees list refreshed
+2025-02-03 11:48:34,875 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:48:36,396 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:48:39,266 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:49:01,964 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:49:01,965 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:49:01,965 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:49:01,966 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:49:01,966 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:49:01,966 - INFO - Inventory refreshed successfully
+2025-02-03 11:49:02,999 - INFO - Item updated: ID 2
+2025-02-03 11:53:20,535 - INFO - Customers list refreshed
+2025-02-03 11:53:22,188 - INFO - New customer added: Kofi Gyamfi
+2025-02-03 11:54:44,115 - INFO - Customers list refreshed
+2025-02-03 11:54:49,856 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:54:52,759 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:54:54,112 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:55:03,592 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:55:05,129 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:55:06,255 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:55:14,268 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,270 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,270 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,271 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,272 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:55:14,272 - INFO - Inventory refreshed successfully
+2025-02-03 11:55:14,748 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,750 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,750 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,751 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:14,751 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:55:14,751 - INFO - Inventory refreshed successfully
+2025-02-03 11:55:15,004 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:15,006 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:15,007 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:15,007 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:55:15,007 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:55:15,008 - INFO - Inventory refreshed successfully
+2025-02-03 11:55:31,221 - ERROR - Decryption failed: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-03 11:55:32,523 - ERROR - Error parsing XML data for item ID 2
+2025-02-03 11:55:34,304 - INFO - Item loaded for updating: ID 2
+2025-02-03 11:58:25,308 - INFO - Tables created successfully
+2025-02-03 11:58:25,308 - INFO - Inventory sizes updated
+2025-02-03 11:58:25,313 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:58:25,315 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:58:25,315 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:58:25,315 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:58:25,315 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:58:25,315 - INFO - Inventory refreshed successfully
+2025-02-03 11:58:25,322 - INFO - Sales report refreshed successfully
+2025-02-03 11:58:25,325 - INFO - Customers list refreshed
+2025-02-03 11:58:25,328 - INFO - Employees list refreshed
+2025-02-03 11:59:10,002 - INFO - Tables created successfully
+2025-02-03 11:59:10,002 - INFO - Inventory sizes updated
+2025-02-03 11:59:10,008 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:10,009 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:10,009 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:10,009 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:10,010 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:59:10,010 - INFO - Inventory refreshed successfully
+2025-02-03 11:59:10,019 - INFO - Sales report refreshed successfully
+2025-02-03 11:59:10,021 - INFO - Customers list refreshed
+2025-02-03 11:59:10,023 - INFO - Employees list refreshed
+2025-02-03 11:59:58,548 - INFO - Tables created successfully
+2025-02-03 11:59:58,549 - INFO - Inventory sizes updated
+2025-02-03 11:59:58,555 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:58,556 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:58,556 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:58,557 - ERROR - Decryption failed: MAC check failed
+2025-02-03 11:59:58,557 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 11:59:58,557 - INFO - Inventory refreshed successfully
+2025-02-03 11:59:58,567 - INFO - Sales report refreshed successfully
+2025-02-03 11:59:58,571 - INFO - Customers list refreshed
+2025-02-03 11:59:58,575 - INFO - Employees list refreshed
+2025-02-03 12:00:29,668 - INFO - Tables created successfully
+2025-02-03 12:00:29,668 - INFO - Inventory sizes updated
+2025-02-03 12:00:29,676 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:29,677 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:29,678 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:29,678 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:29,678 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 12:00:29,678 - INFO - Inventory refreshed successfully
+2025-02-03 12:00:29,695 - INFO - Sales report refreshed successfully
+2025-02-03 12:00:29,697 - INFO - Customers list refreshed
+2025-02-03 12:00:29,701 - INFO - Employees list refreshed
+2025-02-03 12:00:33,068 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:33,070 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:33,071 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:33,071 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:00:33,071 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 12:00:33,072 - INFO - Inventory refreshed successfully
