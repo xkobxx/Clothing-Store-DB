@@ -12,3 +12,10 @@
 2025-02-03 01:19:34,681 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
 2025-02-03 01:20:10,782 - INFO - Database schema created successfully
 2025-02-03 01:20:10,784 - ERROR - Failed to initialize application: 'ClothingStoreDB' object has no attribute 'create_widgets'
+2025-02-03 06:02:24,521 - INFO - Tables created successfully
+2025-02-03 06:02:24,523 - INFO - Inventory sizes updated
+2025-02-03 06:02:24,531 - ERROR - Error processing inventory row 6: Incorrect padding
+2025-02-03 06:02:24,531 - INFO - Inventory refreshed successfully
+2025-02-03 06:02:24,540 - INFO - Sales report refreshed successfully
+2025-02-03 06:02:24,542 - INFO - Customers list refreshed
+2025-02-03 06:02:24,543 - INFO - Employees list refreshed
