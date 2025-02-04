@@ -1,9 +1,9 @@
-import unittest
-import sqlite3
 import os
-from datetime import datetime
+import sqlite3
 import tkinter as tk
+import unittest
 from tkinter import ttk
+
 from clothing_store_db import ClothingStoreDB
 from inventory_utils import check_and_reorder_inventory, get_reorder_history, analyze_reorder_patterns
 from triggers import create_triggers, create_audit_triggers

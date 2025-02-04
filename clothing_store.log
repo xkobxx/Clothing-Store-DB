@@ -681,3 +681,627 @@
 2025-02-03 12:00:33,071 - ERROR - Decryption failed: MAC check failed
 2025-02-03 12:00:33,071 - ERROR - Decryption failed: Incorrect padding
 2025-02-03 12:00:33,072 - INFO - Inventory refreshed successfully
+2025-02-03 12:18:54,582 - INFO - Tables created successfully
+2025-02-03 12:18:54,582 - INFO - Inventory sizes updated
+2025-02-03 12:18:54,588 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:18:54,590 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:18:54,590 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:18:54,590 - ERROR - Decryption failed: MAC check failed
+2025-02-03 12:18:54,590 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 12:18:54,590 - INFO - Inventory refreshed successfully
+2025-02-03 12:18:54,602 - INFO - Sales report refreshed successfully
+2025-02-03 12:18:54,607 - INFO - Customers list refreshed
+2025-02-03 12:18:54,610 - INFO - Employees list refreshed
+2025-02-03 12:34:33,408 - INFO - Tables created successfully
+2025-02-03 12:34:33,409 - INFO - Inventory sizes updated
+2025-02-03 12:38:15,402 - INFO - Database tables created successfully
+2025-02-03 12:38:15,402 - ERROR - Error updating inventory sizes: no such column: size
+2025-02-03 12:38:17,763 - ERROR - Error refreshing inventory: near "is": syntax error
+2025-02-03 12:38:18,900 - ERROR - Error refreshing sales report: no such column: i.name
+2025-02-03 12:38:21,834 - INFO - Customers list refreshed successfully
+2025-02-03 12:38:21,844 - INFO - Employees list refreshed successfully
+2025-02-03 12:38:40,301 - INFO - Database tables created successfully
+2025-02-03 12:38:40,302 - ERROR - Error updating inventory sizes: no such column: size
+2025-02-03 12:39:49,802 - ERROR - Error refreshing inventory: near "is": syntax error
+2025-02-03 12:40:06,278 - ERROR - Error refreshing sales report: no such column: i.name
+2025-02-03 12:40:08,978 - INFO - Customers list refreshed successfully
+2025-02-03 12:40:08,988 - INFO - Employees list refreshed successfully
+2025-02-03 12:42:46,880 - INFO - Database tables created successfully
+2025-02-03 12:42:46,890 - INFO - Inventory sizes updated successfully
+2025-02-03 12:42:46,912 - ERROR - Error refreshing inventory: near "is": syntax error
+2025-02-03 12:42:49,733 - ERROR - Error refreshing sales report: no such column: i.name
+2025-02-03 12:42:51,680 - INFO - Customers list refreshed successfully
+2025-02-03 12:42:51,694 - INFO - Employees list refreshed successfully
+2025-02-03 12:42:57,031 - INFO - Database tables created successfully
+2025-02-03 12:42:57,032 - INFO - Inventory sizes updated successfully
+2025-02-03 12:42:57,048 - ERROR - Error refreshing inventory: near "is": syntax error
+2025-02-03 12:43:40,387 - ERROR - Error refreshing sales report: no such column: i.name
+2025-02-03 12:44:17,399 - INFO - Customers list refreshed successfully
+2025-02-03 12:44:17,408 - INFO - Employees list refreshed successfully
+2025-02-03 12:49:56,732 - INFO - Database tables created successfully
+2025-02-03 12:49:56,733 - INFO - Inventory sizes updated successfully
+2025-02-03 12:49:56,752 - ERROR - Error refreshing inventory: no such column: i.name
+2025-02-03 12:50:00,351 - ERROR - Error refreshing sales report: no such column: i.name
+2025-02-03 12:50:06,384 - INFO - Customers list refreshed successfully
+2025-02-03 12:50:06,397 - INFO - Employees list refreshed successfully
+2025-02-03 12:50:16,317 - INFO - Database tables created successfully
+2025-02-03 12:50:16,318 - INFO - Inventory sizes updated successfully
+2025-02-03 12:50:16,339 - ERROR - Error refreshing inventory: no such column: i.name
+2025-02-03 12:51:10,529 - ERROR - Error refreshing sales report: no such column: i.name
+2025-02-03 12:51:58,169 - INFO - Customers list refreshed successfully
+2025-02-03 12:51:58,181 - INFO - Employees list refreshed successfully
+2025-02-03 12:54:40,867 - INFO - Database tables created successfully
+2025-02-03 12:54:40,867 - INFO - Inventory sizes updated successfully
+2025-02-03 12:54:40,885 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 12:55:36,784 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 12:55:41,207 - INFO - Customers list refreshed successfully
+2025-02-03 12:55:41,217 - INFO - Employees list refreshed successfully
+2025-02-03 12:58:13,754 - INFO - Database tables created successfully
+2025-02-03 12:58:13,754 - INFO - Inventory sizes updated successfully
+2025-02-03 12:58:13,774 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 12:58:58,038 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 12:59:51,002 - INFO - Customers list refreshed successfully
+2025-02-03 12:59:51,013 - INFO - Employees list refreshed successfully
+2025-02-03 13:02:18,292 - INFO - Database tables created successfully
+2025-02-03 13:02:18,292 - INFO - Inventory sizes updated successfully
+2025-02-03 13:02:18,311 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 13:02:19,857 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 13:02:22,295 - INFO - Customers list refreshed successfully
+2025-02-03 13:02:22,307 - INFO - Employees list refreshed successfully
+2025-02-03 13:02:27,030 - INFO - Database tables created successfully
+2025-02-03 13:02:27,031 - INFO - Inventory sizes updated successfully
+2025-02-03 13:02:27,049 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 13:03:25,177 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 13:03:28,413 - INFO - Customers list refreshed successfully
+2025-02-03 13:03:28,426 - INFO - Employees list refreshed successfully
+2025-02-03 13:05:54,398 - INFO - Database tables created successfully
+2025-02-03 13:05:54,399 - INFO - Inventory sizes updated successfully
+2025-02-03 13:05:54,420 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 13:05:55,943 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 13:05:56,701 - INFO - Customers list refreshed successfully
+2025-02-03 13:05:56,714 - INFO - Employees list refreshed successfully
+2025-02-03 13:09:47,813 - INFO - Database tables created successfully
+2025-02-03 13:09:47,814 - INFO - Inventory sizes updated successfully
+2025-02-03 13:09:47,836 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 13:09:49,194 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 13:09:50,082 - INFO - Customers list refreshed successfully
+2025-02-03 13:09:50,093 - INFO - Employees list refreshed successfully
+2025-02-03 13:10:36,502 - INFO - Tables created successfully
+2025-02-03 13:10:36,510 - INFO - Inventory sizes updated
+2025-02-03 13:10:36,518 - ERROR - Decryption failed: MAC check failed
+2025-02-03 13:10:36,519 - ERROR - Decryption failed: MAC check failed
+2025-02-03 13:10:36,519 - ERROR - Decryption failed: MAC check failed
+2025-02-03 13:10:36,519 - ERROR - Decryption failed: MAC check failed
+2025-02-03 13:10:36,519 - ERROR - Decryption failed: Incorrect padding
+2025-02-03 13:10:36,519 - INFO - Inventory refreshed successfully
+2025-02-03 13:10:36,532 - INFO - Sales report refreshed successfully
+2025-02-03 13:10:36,535 - INFO - Customers list refreshed
+2025-02-03 13:10:36,539 - INFO - Employees list refreshed
+2025-02-03 21:42:30,935 - INFO - Database tables created successfully
+2025-02-03 21:42:30,941 - INFO - Inventory sizes updated successfully
+2025-02-03 21:42:30,970 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 21:42:34,267 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 21:42:34,823 - INFO - Customers list refreshed successfully
+2025-02-03 21:42:34,836 - INFO - Employees list refreshed successfully
+2025-02-03 21:49:57,835 - INFO - Database tables created successfully
+2025-02-03 21:49:57,836 - INFO - Inventory sizes updated successfully
+2025-02-03 21:49:57,842 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 21:50:07,158 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 21:50:09,388 - INFO - Customers list refreshed successfully
+2025-02-03 21:50:09,390 - INFO - Employees list refreshed successfully
+2025-02-03 22:13:36,445 - INFO - Database tables created successfully
+2025-02-03 22:13:36,446 - INFO - Inventory sizes updated successfully
+2025-02-03 22:13:36,451 - ERROR - Error refreshing inventory: no such column: inventory.name
+2025-02-03 22:14:43,896 - ERROR - Error refreshing sales report: no such column: inventory.name
+2025-02-03 22:14:45,024 - INFO - Customers list refreshed successfully
+2025-02-03 22:14:45,025 - INFO - Employees list refreshed successfully
+2025-02-03 22:20:30,967 - INFO - Database tables created successfully
+2025-02-03 22:20:30,967 - INFO - Inventory sizes updated successfully
+2025-02-03 22:20:59,604 - INFO - Database tables created successfully
+2025-02-03 22:20:59,605 - INFO - Inventory sizes updated successfully
+2025-02-03 22:23:56,501 - INFO - Database tables created successfully
+2025-02-03 22:23:56,501 - INFO - Inventory sizes updated successfully
+2025-02-03 22:23:58,353 - INFO - Database tables created successfully
+2025-02-03 22:23:58,354 - INFO - Inventory sizes updated successfully
+2025-02-03 22:37:35,255 - INFO - Database tables created successfully
+2025-02-03 22:37:35,256 - INFO - Inventory sizes updated successfully
+2025-02-03 22:37:35,260 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,260 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,260 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,260 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 22:37:35,261 - ERROR - Error decrypting price: Incorrect padding
+2025-02-03 22:37:35,261 - INFO - Inventory refreshed successfully
+2025-02-03 22:37:35,266 - ERROR - Error refreshing sales report: no such column: sales.date
+2025-02-03 22:39:08,113 - INFO - Customers list refreshed successfully
+2025-02-03 22:39:08,116 - INFO - Employees list refreshed successfully
+2025-02-03 23:15:25,570 - INFO - Database tables created successfully
+2025-02-03 23:15:25,571 - INFO - Inventory sizes updated successfully
+2025-02-03 23:15:25,580 - INFO - Added 'date' column to sales table
+2025-02-03 23:15:25,584 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,584 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,584 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-03 23:15:25,585 - ERROR - Error decrypting price: Incorrect padding
+2025-02-03 23:15:25,585 - INFO - Inventory refreshed successfully
+2025-02-03 23:15:25,588 - ERROR - Error refreshing sales report: no such column: sales.item_id
+2025-02-03 23:16:23,474 - INFO - Customers list refreshed successfully
+2025-02-03 23:16:23,477 - INFO - Employees list refreshed successfully
+2025-02-04 00:01:18,050 - INFO - Database tables created successfully
+2025-02-04 00:01:18,051 - INFO - Inventory sizes updated successfully
+2025-02-04 00:01:18,057 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,057 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,058 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:01:18,059 - ERROR - Error decrypting price: Incorrect padding
+2025-02-04 00:01:18,059 - INFO - Inventory refreshed successfully
+2025-02-04 00:01:18,061 - ERROR - Error refreshing sales report: no such column: sales.item_id
+2025-02-04 00:01:22,504 - INFO - Customers list refreshed successfully
+2025-02-04 00:01:22,507 - INFO - Employees list refreshed successfully
+2025-02-04 00:07:35,662 - INFO - Database tables created successfully
+2025-02-04 00:07:35,663 - INFO - Inventory sizes updated successfully
+2025-02-04 00:07:35,673 - INFO - Added 'item_id' column to sales table
+2025-02-04 00:07:35,677 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,678 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,678 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,678 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,678 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,678 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,679 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,679 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,679 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,679 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:07:35,679 - ERROR - Error decrypting price: Incorrect padding
+2025-02-04 00:07:35,679 - INFO - Inventory refreshed successfully
+2025-02-04 00:07:35,682 - INFO - Sales report refreshed successfully
+2025-02-04 00:07:35,682 - INFO - Customers list refreshed successfully
+2025-02-04 00:07:35,685 - INFO - Employees list refreshed successfully
+2025-02-04 00:08:06,511 - INFO - Database tables created successfully
+2025-02-04 00:08:06,512 - INFO - Inventory sizes updated successfully
+2025-02-04 00:08:06,516 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,516 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,516 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:08:06,517 - ERROR - Error decrypting price: Incorrect padding
+2025-02-04 00:08:06,518 - INFO - Inventory refreshed successfully
+2025-02-04 00:08:06,519 - INFO - Sales report refreshed successfully
+2025-02-04 00:08:06,520 - INFO - Customers list refreshed successfully
+2025-02-04 00:08:06,521 - INFO - Employees list refreshed successfully
+2025-02-04 00:17:59,528 - INFO - Database tables created successfully
+2025-02-04 00:17:59,528 - INFO - Inventory sizes updated successfully
+2025-02-04 00:17:59,533 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,534 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,534 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,534 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,534 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,534 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,535 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,535 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,535 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,535 - ERROR - Error decrypting price: Incorrect AES key length (44 bytes)
+2025-02-04 00:17:59,535 - ERROR - Error decrypting price: Incorrect padding
+2025-02-04 00:17:59,535 - INFO - Inventory refreshed successfully
+2025-02-04 00:17:59,538 - INFO - Sales report refreshed successfully
+2025-02-04 00:17:59,539 - INFO - Customers list refreshed successfully
+2025-02-04 00:17:59,540 - INFO - Employees list refreshed successfully
+2025-02-04 00:18:50,166 - INFO - Database tables created successfully
+2025-02-04 00:18:50,166 - INFO - Inventory sizes updated successfully
+2025-02-04 00:18:50,171 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,171 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,172 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,172 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,172 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,172 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,172 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,172 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,173 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,173 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,173 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:18:50,173 - INFO - Inventory refreshed successfully
+2025-02-04 00:18:50,177 - INFO - Sales report refreshed successfully
+2025-02-04 00:18:50,177 - INFO - Customers list refreshed successfully
+2025-02-04 00:18:50,178 - INFO - Employees list refreshed successfully
+2025-02-04 00:29:12,016 - INFO - Database tables created successfully
+2025-02-04 00:29:12,017 - INFO - Inventory sizes updated successfully
+2025-02-04 00:29:12,021 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,022 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,022 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,022 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,022 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,022 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,022 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,023 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,023 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,023 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,023 - ERROR - Error decrypting price: can't concat str to bytes
+2025-02-04 00:29:12,023 - INFO - Inventory refreshed successfully
+2025-02-04 00:29:12,025 - INFO - Sales report refreshed successfully
+2025-02-04 00:29:12,026 - INFO - Customers list refreshed successfully
+2025-02-04 00:29:12,027 - INFO - Employees list refreshed successfully
+2025-02-04 00:30:08,088 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:34:52,351 - INFO - Database tables created successfully
+2025-02-04 00:34:52,352 - INFO - Inventory sizes updated successfully
+2025-02-04 00:34:52,358 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,358 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,359 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:34:52,360 - INFO - Inventory refreshed successfully
+2025-02-04 00:34:52,363 - INFO - Sales report refreshed successfully
+2025-02-04 00:34:52,364 - INFO - Customers list refreshed successfully
+2025-02-04 00:34:52,365 - INFO - Employees list refreshed successfully
+2025-02-04 00:35:49,801 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:35:49,802 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:35:54,376 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:35:54,377 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:35:59,225 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:35:59,226 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:39:36,068 - INFO - Database tables created successfully
+2025-02-04 00:39:36,068 - INFO - Inventory sizes updated successfully
+2025-02-04 00:39:36,071 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:39:36,072 - INFO - Inventory refreshed successfully
+2025-02-04 00:39:36,075 - INFO - Sales report refreshed successfully
+2025-02-04 00:39:36,078 - INFO - Customers list refreshed successfully
+2025-02-04 00:39:36,079 - INFO - Employees list refreshed successfully
+2025-02-04 00:40:37,807 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:40:37,808 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:42:57,048 - INFO - Database tables created successfully
+2025-02-04 00:42:57,049 - INFO - Inventory sizes updated successfully
+2025-02-04 00:42:57,055 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,055 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,055 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:42:57,056 - INFO - Inventory refreshed successfully
+2025-02-04 00:42:57,058 - INFO - Sales report refreshed successfully
+2025-02-04 00:42:57,059 - INFO - Customers list refreshed successfully
+2025-02-04 00:42:57,060 - INFO - Employees list refreshed successfully
+2025-02-04 00:43:58,199 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:43:58,200 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:47:57,021 - INFO - Database tables created successfully
+2025-02-04 00:47:57,021 - INFO - Inventory sizes updated successfully
+2025-02-04 00:47:57,026 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,027 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,028 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,028 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,028 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:47:57,028 - INFO - Inventory refreshed successfully
+2025-02-04 00:47:57,032 - INFO - Sales report refreshed successfully
+2025-02-04 00:47:57,033 - INFO - Customers list refreshed successfully
+2025-02-04 00:47:57,034 - INFO - Employees list refreshed successfully
+2025-02-04 00:48:07,096 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,096 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:48:07,097 - INFO - Inventory refreshed successfully
+2025-02-04 00:48:56,393 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:48:56,393 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:49:06,625 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:49:06,626 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:49:10,376 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:49:10,376 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 00:49:23,976 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:51:05,109 - INFO - Employees list refreshed successfully
+2025-02-04 00:51:05,109 - INFO - New employee added: Kofi Sampson
+2025-02-04 00:55:35,339 - INFO - Database tables created successfully
+2025-02-04 00:55:35,339 - INFO - Inventory sizes updated successfully
+2025-02-04 00:55:35,344 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,344 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,344 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 00:55:35,345 - INFO - Inventory refreshed successfully
+2025-02-04 00:55:35,349 - INFO - Sales report refreshed successfully
+2025-02-04 00:55:35,351 - INFO - Customers list refreshed successfully
+2025-02-04 00:55:35,352 - INFO - Employees list refreshed successfully
+2025-02-04 00:56:21,799 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 00:56:21,799 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:08:40,137 - INFO - Database tables created successfully
+2025-02-04 01:08:40,138 - INFO - Inventory sizes updated successfully
+2025-02-04 01:08:40,142 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,142 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,143 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,144 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,144 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:08:40,144 - INFO - Inventory refreshed successfully
+2025-02-04 01:08:40,147 - INFO - Sales report refreshed successfully
+2025-02-04 01:08:40,148 - INFO - Customers list refreshed successfully
+2025-02-04 01:08:40,149 - INFO - Employees list refreshed successfully
+2025-02-04 01:09:45,166 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:09:45,166 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:09:53,239 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:09:53,240 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:09:55,641 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:09:55,641 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:09:57,976 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:09:57,977 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:19:47,099 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:19:47,100 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:19:50,271 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:19:50,271 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:20:11,009 - INFO - Database tables created successfully
+2025-02-04 01:20:11,010 - INFO - Inventory sizes updated successfully
+2025-02-04 01:20:11,014 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,014 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,015 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,016 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,016 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:11,016 - INFO - Inventory refreshed successfully
+2025-02-04 01:20:11,019 - INFO - Sales report refreshed successfully
+2025-02-04 01:20:11,020 - INFO - Customers list refreshed successfully
+2025-02-04 01:20:11,020 - INFO - Employees list refreshed successfully
+2025-02-04 01:20:12,512 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,512 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,513 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,513 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,513 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:12,514 - INFO - Inventory refreshed successfully
+2025-02-04 01:20:13,479 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,480 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,480 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,480 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,481 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,481 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,481 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,481 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,482 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,482 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,482 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:13,482 - INFO - Inventory refreshed successfully
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,576 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,577 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,577 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,577 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:20:17,577 - INFO - Inventory refreshed successfully
+2025-02-04 01:20:39,343 - INFO - Sales report refreshed successfully
+2025-02-04 01:20:40,264 - INFO - Sales report refreshed successfully
+2025-02-04 01:23:23,481 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:23:23,481 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:23:38,112 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:23:38,112 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:26:32,772 - INFO - Database tables created successfully
+2025-02-04 01:26:32,773 - INFO - Inventory sizes updated successfully
+2025-02-04 01:26:32,781 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,781 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,782 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,782 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,782 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,782 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,782 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,783 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,783 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,783 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,783 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:26:32,783 - INFO - Inventory refreshed successfully
+2025-02-04 01:26:32,785 - INFO - Sales report refreshed successfully
+2025-02-04 01:26:32,786 - INFO - Customers list refreshed successfully
+2025-02-04 01:26:32,787 - INFO - Employees list refreshed successfully
+2025-02-04 01:27:20,568 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:27:20,568 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:27:23,057 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:27:23,057 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:27:24,760 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:27:24,760 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:39:20,378 - INFO - Database tables created successfully
+2025-02-04 01:39:20,379 - INFO - Inventory sizes updated successfully
+2025-02-04 01:39:20,384 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,384 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,384 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,384 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,384 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - ERROR - Decryption error: can't concat str to bytes
+2025-02-04 01:39:20,385 - INFO - Inventory refreshed successfully
+2025-02-04 01:39:20,390 - INFO - Sales report refreshed successfully
+2025-02-04 01:39:20,390 - INFO - Customers list refreshed successfully
+2025-02-04 01:39:20,391 - INFO - Employees list refreshed successfully
+2025-02-04 01:40:19,279 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:40:19,280 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:40:21,527 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:40:21,527 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:40:39,664 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:40:39,665 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:40:42,215 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:40:42,216 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:40:44,256 - ERROR - Encryption error: can't concat str to bytes
+2025-02-04 01:40:44,256 - ERROR - Unexpected error in add_item: can't concat str to bytes
+2025-02-04 01:45:20,093 - INFO - Database tables created successfully
+2025-02-04 01:45:20,093 - INFO - Inventory sizes updated successfully
+2025-02-04 01:45:20,150 - ERROR - Decryption error: 
+2025-02-04 01:45:20,183 - ERROR - Decryption error: 
+2025-02-04 01:45:20,215 - ERROR - Decryption error: 
+2025-02-04 01:45:20,247 - ERROR - Decryption error: 
+2025-02-04 01:45:20,282 - ERROR - Decryption error: 
+2025-02-04 01:45:20,317 - ERROR - Decryption error: 
+2025-02-04 01:45:20,353 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:45:20,394 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:45:20,427 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:45:20,461 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:45:20,462 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:45:20,462 - INFO - Inventory refreshed successfully
+2025-02-04 01:45:20,464 - INFO - Sales report refreshed successfully
+2025-02-04 01:45:20,465 - INFO - Customers list refreshed successfully
+2025-02-04 01:45:20,466 - INFO - Employees list refreshed successfully
+2025-02-04 01:46:08,516 - ERROR - Decryption error: 
+2025-02-04 01:46:08,547 - ERROR - Decryption error: 
+2025-02-04 01:46:08,579 - ERROR - Decryption error: 
+2025-02-04 01:46:08,612 - ERROR - Decryption error: 
+2025-02-04 01:46:08,645 - ERROR - Decryption error: 
+2025-02-04 01:46:08,677 - ERROR - Decryption error: 
+2025-02-04 01:46:08,712 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:46:08,745 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:46:08,778 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:46:08,811 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:46:08,811 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:46:08,844 - INFO - Inventory refreshed successfully
+2025-02-04 01:46:08,844 - INFO - New item added: Carpenter Denim Jacket
+2025-02-04 01:48:11,312 - ERROR - Decryption error: 
+2025-02-04 01:48:11,343 - ERROR - Decryption error: 
+2025-02-04 01:48:11,376 - ERROR - Decryption error: 
+2025-02-04 01:48:11,410 - ERROR - Decryption error: 
+2025-02-04 01:48:11,443 - ERROR - Decryption error: 
+2025-02-04 01:48:11,476 - ERROR - Decryption error: 
+2025-02-04 01:48:11,509 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:48:11,543 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:48:11,577 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:48:11,610 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:48:11,610 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:48:11,643 - INFO - Inventory refreshed successfully
+2025-02-04 01:48:19,646 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 01:49:25,071 - ERROR - Decryption error: 
+2025-02-04 01:49:25,102 - ERROR - Decryption error: 
+2025-02-04 01:49:25,135 - ERROR - Decryption error: 
+2025-02-04 01:49:25,166 - ERROR - Decryption error: 
+2025-02-04 01:49:25,199 - ERROR - Decryption error: 
+2025-02-04 01:49:25,230 - ERROR - Decryption error: 
+2025-02-04 01:49:25,262 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:49:25,295 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:49:25,328 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:49:25,359 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:49:25,359 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:49:25,391 - INFO - Inventory refreshed successfully
+2025-02-04 01:49:25,391 - INFO - Item updated: ID 7
+2025-02-04 01:53:58,150 - INFO - Database tables created successfully
+2025-02-04 01:53:58,151 - INFO - Inventory sizes updated successfully
+2025-02-04 01:53:58,194 - ERROR - Decryption error: 
+2025-02-04 01:53:58,225 - ERROR - Decryption error: 
+2025-02-04 01:53:58,257 - ERROR - Decryption error: 
+2025-02-04 01:53:58,287 - ERROR - Decryption error: 
+2025-02-04 01:53:58,318 - ERROR - Decryption error: 
+2025-02-04 01:53:58,349 - ERROR - Decryption error: 
+2025-02-04 01:53:58,380 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,411 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,441 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,472 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,473 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:53:58,504 - INFO - Inventory refreshed successfully
+2025-02-04 01:53:58,509 - INFO - Sales report refreshed successfully
+2025-02-04 01:53:58,510 - INFO - Customers list refreshed successfully
+2025-02-04 01:53:58,511 - INFO - Employees list refreshed successfully
+2025-02-04 01:53:58,514 - INFO - Database tables created successfully
+2025-02-04 01:53:58,514 - INFO - Inventory sizes updated successfully
+2025-02-04 01:53:58,548 - ERROR - Decryption error: 
+2025-02-04 01:53:58,580 - ERROR - Decryption error: 
+2025-02-04 01:53:58,610 - ERROR - Decryption error: 
+2025-02-04 01:53:58,641 - ERROR - Decryption error: 
+2025-02-04 01:53:58,672 - ERROR - Decryption error: 
+2025-02-04 01:53:58,703 - ERROR - Decryption error: 
+2025-02-04 01:53:58,734 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,765 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,796 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,826 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:58,826 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:53:58,857 - INFO - Inventory refreshed successfully
+2025-02-04 01:53:58,861 - INFO - Sales report refreshed successfully
+2025-02-04 01:53:58,861 - INFO - Customers list refreshed successfully
+2025-02-04 01:53:58,862 - INFO - Employees list refreshed successfully
+2025-02-04 01:53:58,866 - INFO - Database tables created successfully
+2025-02-04 01:53:58,866 - INFO - Inventory sizes updated successfully
+2025-02-04 01:53:58,900 - ERROR - Decryption error: 
+2025-02-04 01:53:58,932 - ERROR - Decryption error: 
+2025-02-04 01:53:58,961 - ERROR - Decryption error: 
+2025-02-04 01:53:58,993 - ERROR - Decryption error: 
+2025-02-04 01:53:59,023 - ERROR - Decryption error: 
+2025-02-04 01:53:59,053 - ERROR - Decryption error: 
+2025-02-04 01:53:59,084 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:59,115 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:59,146 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:59,177 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 01:53:59,177 - ERROR - Decryption error: Incorrect padding
+2025-02-04 01:53:59,209 - INFO - Inventory refreshed successfully
+2025-02-04 01:53:59,213 - INFO - Sales report refreshed successfully
+2025-02-04 01:53:59,215 - INFO - Customers list refreshed successfully
+2025-02-04 01:53:59,216 - INFO - Employees list refreshed successfully
