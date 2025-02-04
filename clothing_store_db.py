@@ -1,31 +1,35 @@
 import atexit
 import base64
-import io
+import csv
+import logging
+import os
+import shutil
 import sqlite3
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog, simpledialog
-#from Cryptodome.Cipher import AES
-#from Cryptodome.Random import get_random_bytes
-from PIL import Image, ImageTk
+import uuid
 import xml.etree.ElementTree as ET
-import logging
-from config import ENCRYPTION_KEY, DB_NAME, INVENTORY_TABLE, INVENTORY_SIZES_TABLE, SALES_TABLE, CUSTOMERS_TABLE, EMPLOYEES_TABLE, ITEM_IMAGES_TABLE, LOG_FILE, LOG_LEVEL
 from datetime import datetime
-import csv
-import os
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.backends import default_backend
+from tkinter import ttk, messagebox, filedialog, simpledialog
 
+import PIL
+# from Cryptodome.Cipher import AES
+# from Cryptodome.Random import get_random_bytes
+from PIL import Image, ImageTk
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
+from config import ENCRYPTION_KEY, DB_NAME, INVENTORY_TABLE, INVENTORY_SIZES_TABLE, SALES_TABLE, CUSTOMERS_TABLE, \
+    EMPLOYEES_TABLE, ITEM_IMAGES_TABLE, LOG_FILE, LOG_LEVEL
 
 # Set up logging
 logging.basicConfig(filename=LOG_FILE, level=LOG_LEVEL,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
+
 class ClothingStoreDB:
     def __init__(self, master):
-        self.customer_name = None
         self.master = master
         self.master.title("Clothing Store Database")
         self.master.geometry("1000x600")
@@ -83,7 +87,8 @@ class ClothingStoreDB:
 
         # Inventory tree view
         self.inventory_tree = ttk.Treeview(inventory_tab,
-                                           columns=("ID", "Name", "Category", "Price", "Size", "Quantity", "Colors"),
+                                           columns=(
+                                           "ID", "Name", "Category", "Price", "Size", "Quantity", "Colors", "Image"),
                                            show="headings")
         self.inventory_tree.heading("ID", text="ID")
         self.inventory_tree.heading("Name", text="Name")
@@ -92,6 +97,7 @@ class ClothingStoreDB:
         self.inventory_tree.heading("Size", text="Size")
         self.inventory_tree.heading("Quantity", text="Quantity")
         self.inventory_tree.heading("Colors", text="Colors")
+        self.inventory_tree.heading("Image", text="Image")
         self.inventory_tree.pack(expand=True, fill="both", padx=10, pady=10)
 
         refresh_button = tk.Button(inventory_tab, text="Refresh", command=self.refresh_inventory)
@@ -140,7 +146,8 @@ class ClothingStoreDB:
         self.colors_entry.grid(row=6, column=1, padx=5, pady=5)
 
         self.image_path = None
-        tk.Button(add_item_tab, text="Choose Image", command=self.choose_image).grid(row=7, column=0, columnspan=2, pady=10)
+        tk.Button(add_item_tab, text="Choose Image", command=self.choose_image).grid(row=7, column=0, columnspan=2,
+                                                                                     pady=10)
 
         tk.Button(add_item_tab, text="Add Item", command=self.add_item).grid(row=8, column=0, columnspan=2, pady=10)
 
@@ -177,9 +184,12 @@ class ClothingStoreDB:
         self.update_colors_entry = tk.Entry(update_delete_tab)
         self.update_colors_entry.grid(row=6, column=1, padx=5, pady=5)
 
-        tk.Button(update_delete_tab, text="Load Item", command=self.load_item).grid(row=7, column=0, columnspan=2, pady=10)
-        tk.Button(update_delete_tab, text="Update Item", command=self.update_item).grid(row=8, column=0, columnspan=2, pady=10)
-        tk.Button(update_delete_tab, text="Delete Item", command=self.delete_item).grid(row=9, column=0, columnspan=2, pady=10)
+        tk.Button(update_delete_tab, text="Load Item", command=self.load_item).grid(row=7, column=0, columnspan=2,
+                                                                                    pady=10)
+        tk.Button(update_delete_tab, text="Update Item", command=self.update_item).grid(row=8, column=0, columnspan=2,
+                                                                                        pady=10)
+        tk.Button(update_delete_tab, text="Delete Item", command=self.delete_item).grid(row=9, column=0, columnspan=2,
+                                                                                        pady=10)
 
     def create_sales_report_tab(self):
         sales_report_tab = tk.Frame(self.notebook)
@@ -276,7 +286,8 @@ class ClothingStoreDB:
             category TEXT NOT NULL,
             base_price REAL NOT NULL,
             description TEXT,
-            item_details TEXT
+            item_details TEXT,
+            image_path TEXT
         )
         ''')
 
@@ -347,6 +358,10 @@ class ClothingStoreDB:
                 self.cursor.execute(f"ALTER TABLE {INVENTORY_TABLE} ADD COLUMN item_details TEXT")
                 self.conn.commit()
                 logging.info("Added 'item_details' column to inventory table")
+            if 'image_path' not in columns:
+                self.cursor.execute(f"ALTER TABLE {INVENTORY_TABLE} ADD COLUMN image_path TEXT")
+                self.conn.commit()
+                logging.info("Added 'image_path' column to inventory table")
         except sqlite3.Error as e:
             logging.error(f"Error checking table structure: {e}")
             messagebox.showerror("Database Error", f"Failed to check table structure: {e}")
@@ -360,7 +375,8 @@ class ClothingStoreDB:
                 self.conn.commit()
                 logging.info("Added 'date' column to sales table")
             if 'item_id' not in columns:
-                self.cursor.execute(f"ALTER TABLE {SALES_TABLE} ADD COLUMN item_id INTEGER REFERENCES {INVENTORY_TABLE}(id)")
+                self.cursor.execute(
+                    f"ALTER TABLE {SALES_TABLE} ADD COLUMN item_id INTEGER REFERENCES {INVENTORY_TABLE}(id)")
                 self.conn.commit()
                 logging.info("Added 'item_id' column to sales table")
         except sqlite3.Error as e:
@@ -375,8 +391,9 @@ class ClothingStoreDB:
                 self.cursor.execute(f"SELECT COUNT(*) FROM {INVENTORY_SIZES_TABLE} WHERE inventory_id = ?", (item[0],))
                 count = self.cursor.fetchone()[0]
                 if count == 0:
-                    self.cursor.execute(f"INSERT INTO {INVENTORY_SIZES_TABLE} (inventory_id, size, quantity) VALUES (?, ?, ?)",
-                                        (item[0], 'One Size', 0))
+                    self.cursor.execute(
+                        f"INSERT INTO {INVENTORY_SIZES_TABLE} (inventory_id, size, quantity) VALUES (?, ?, ?)",
+                        (item[0], 'One Size', 0))
             self.conn.commit()
             logging.info("Inventory sizes updated successfully")
         except sqlite3.Error as e:
@@ -388,7 +405,7 @@ class ClothingStoreDB:
             self.inventory_tree.delete(*self.inventory_tree.get_children())
             query = f'''
     SELECT {INVENTORY_TABLE}.id, {INVENTORY_TABLE}.item_name, {INVENTORY_TABLE}.category, {INVENTORY_TABLE}.base_price, 
-           {INVENTORY_SIZES_TABLE}.size, {INVENTORY_SIZES_TABLE}.quantity, {INVENTORY_TABLE}.item_details
+           {INVENTORY_SIZES_TABLE}.size, {INVENTORY_SIZES_TABLE}.quantity, {INVENTORY_TABLE}.item_details, {INVENTORY_TABLE}.image_path
     FROM {INVENTORY_TABLE}
     JOIN {INVENTORY_SIZES_TABLE} ON {INVENTORY_TABLE}.id = {INVENTORY_SIZES_TABLE}.inventory_id
     '''
@@ -403,7 +420,10 @@ class ClothingStoreDB:
                     logging.error(f"Error decrypting price: {e}")
                     decrypted_price = "N/A"
                 colors = self.parse_colors_xml(row[6])
-                self.inventory_tree.insert('', 'end', values=(row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4], row[5], colors))
+                image_path = row[7]
+                self.inventory_tree.insert('', 'end', values=(
+                row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4], row[5],
+                colors, image_path))
             logging.info("Inventory refreshed successfully")
         except sqlite3.Error as e:
             logging.error(f"Error refreshing inventory: {e}")
@@ -415,7 +435,7 @@ class ClothingStoreDB:
             self.inventory_tree.delete(*self.inventory_tree.get_children())
             self.cursor.execute(f'''
 SELECT {INVENTORY_TABLE}.id, {INVENTORY_TABLE}.item_name, {INVENTORY_TABLE}.category, {INVENTORY_TABLE}.base_price, 
-       {INVENTORY_SIZES_TABLE}.size, {INVENTORY_SIZES_TABLE}.quantity, {INVENTORY_TABLE}.item_details
+       {INVENTORY_SIZES_TABLE}.size, {INVENTORY_SIZES_TABLE}.quantity, {INVENTORY_TABLE}.item_details, {INVENTORY_TABLE}.image_path
 FROM {INVENTORY_TABLE}
 JOIN {INVENTORY_SIZES_TABLE} ON {INVENTORY_TABLE}.id = {INVENTORY_SIZES_TABLE}.inventory_id
 WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.category) LIKE ?
@@ -429,7 +449,10 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
                     logging.error(f"Error decrypting price: {e}")
                     decrypted_price = "N/A"
                 colors = self.parse_colors_xml(row[6])
-                self.inventory_tree.insert('', 'end', values=(row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4], row[5], colors))
+                image_path = row[7]
+                self.inventory_tree.insert('', 'end', values=(
+                row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4], row[5],
+                colors, image_path))
             logging.info(f"Inventory search performed for term: {search_term}")
         except sqlite3.Error as e:
             logging.error(f"Error searching inventory: {e}")
@@ -474,13 +497,19 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
                         logging.error(f"Error parsing XML data for item ID {item_id}")
                 tk.Label(details_window, text=f"Colors: {colors}").pack(pady=5)
 
-                if item_data[9]:
-                    image = Image.open(io.BytesIO(item_data[9]))
-                    image.thumbnail((200, 200))
-                    photo = ImageTk.PhotoImage(image)
-                    image_label = tk.Label(details_window, image=photo)
-                    image_label.image = photo
-                    image_label.pack(pady=10)
+                image_path = item_data[9]
+                if image_path:
+                    try:
+                        image_full_path = os.path.join(os.path.dirname(__file__), image_path)
+                        image = Image.open(image_full_path)
+                        image.thumbnail((200, 200))
+                        photo = ImageTk.PhotoImage(image)
+                        image_label = tk.Label(details_window, image=photo)
+                        image_label.image = photo
+                        image_label.pack(pady=10)
+                    except (FileNotFoundError, PIL.UnidentifiedImageError) as e:
+                        logging.error(f"Error loading image: {e}")
+                        tk.Label(details_window, text=f"Image: Not Found").pack(pady=5)
 
                 tk.Button(details_window, text="Close", command=details_window.destroy).pack(pady=10)
                 logging.info(f"Item details displayed: ID {item_id}")
@@ -502,6 +531,7 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
         description = self.description_entry.get().strip()
         colors = self.colors_entry.get().strip()
 
+        # Input validation (helps prevent SQL injection)
         if not all([name, category, price, size, quantity]):
             messagebox.showerror("Error", "Please fill in all required fields")
             return
@@ -513,14 +543,37 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
             messagebox.showerror("Error", "Invalid price or quantity. Please enter numeric values.")
             return
 
+        if price <= 0 or quantity <= 0:
+            messagebox.showerror("Error", "Price and quantity must be positive")
+            return
+
         try:
             encrypted_price = self.encrypt_data(str(price))
             colors_xml = self.create_colors_xml(colors)
 
+            # Handle image upload
+            image_path = None
+            if self.image_path:
+                # Create the item_images directory if it doesn't exist
+                item_images_dir = os.path.join(os.path.dirname(__file__), "item_images")
+                os.makedirs(item_images_dir, exist_ok=True)
+
+                # Generate a unique filename
+                file_extension = os.path.splitext(self.image_path)[1]
+                new_filename = f"{uuid.uuid4()}{file_extension}"
+                new_file_path = os.path.join(item_images_dir, new_filename)
+
+                # Copy the file to the designated folder
+                shutil.copy(self.image_path, new_file_path)
+
+                # Store the relative path in the database
+                image_path = os.path.join("item_images", new_filename)
+
+            # SQL Injection Protection: Using parameterized query
             self.cursor.execute(f'''
-            INSERT INTO {INVENTORY_TABLE} (item_name, category, base_price, description, item_details)
-            VALUES (?, ?, ?, ?, ?)
-            ''', (name, category, encrypted_price, description, colors_xml))
+            INSERT INTO {INVENTORY_TABLE} (item_name, category, base_price, description, item_details, image_path)
+            VALUES (?, ?, ?, ?, ?, ?)
+            ''', (name, category, encrypted_price, description, colors_xml, image_path))
 
             item_id = self.cursor.lastrowid
 
@@ -529,21 +582,14 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
             VALUES (?, ?, ?)
             ''', (item_id, size, quantity))
 
-            if self.image_path:
-                with open(self.image_path, 'rb') as file:
-                    image_data = file.read()
-                self.cursor.execute(f'''
-                INSERT INTO {ITEM_IMAGES_TABLE} (inventory_id, image_data)
-                VALUES (?, ?)
-                ''', (item_id, image_data))
-
             self.conn.commit()
             messagebox.showinfo("Success", "Item added successfully")
             self.refresh_inventory()
             logging.info(f"New item added: {name}")
 
             # Clear entry fields
-            for entry in [self.item_name_entry, self.price_entry, self.size_entry, self.quantity_entry, self.description_entry, self.colors_entry]:
+            for entry in [self.item_name_entry, self.price_entry, self.size_entry, self.quantity_entry,
+                          self.description_entry, self.colors_entry]:
                 entry.delete(0, 'end')
             self.category_combobox.set("Select a category")
             self.image_path = None
@@ -570,7 +616,7 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
 
         try:
             self.cursor.execute(f'''
-        SELECT i.*, "is".size, "is".quantity
+        SELECT i.*, "is".size, "is".quantity, i.image_path
         FROM {INVENTORY_TABLE} i
         JOIN {INVENTORY_SIZES_TABLE} "is" ON i.id = "is".inventory_id
         WHERE i.id = ?
@@ -623,7 +669,7 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
 
             self.cursor.execute(f'''
         UPDATE {INVENTORY_TABLE}
-        SET item_name = ?, category = ?, base_price = ?,item_details = ?
+        SET item_name = ?, category = ?, base_price = ?, item_details = ?
         WHERE id = ?
         ''', (name, category, encrypted_price, colors_xml, item_id))
 
@@ -639,7 +685,9 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
             logging.info(f"Item updated: ID {item_id}")
 
             # Clear entry fields
-            for entry in[self.update_id_entry, self.update_name_entry, self.update_category_entry, self.update_price_entry, self.update_size_entry, self.update_quantity_entry, self.update_colors_entry]:
+            for entry in [self.update_id_entry, self.update_name_entry, self.update_category_entry,
+                          self.update_price_entry, self.update_size_entry, self.update_quantity_entry,
+                          self.update_colors_entry]:
                 entry.delete(0, 'end')
 
         except sqlite3.Error as e:
@@ -662,7 +710,9 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
             logging.info(f"Item deleted: ID {item_id}")
 
             # Clear entry fields
-            for entry in [self.update_id_entry, self.update_name_entry, self.update_category_entry, self.update_price_entry, self.update_size_entry, self.update_quantity_entry, self.update_colors_entry]:
+            for entry in [self.update_id_entry, self.update_name_entry, self.update_category_entry,
+                          self.update_price_entry, self.update_size_entry, self.update_quantity_entry,
+                          self.update_colors_entry]:
                 entry.delete(0, 'end')
 
         except sqlite3.Error as e:
@@ -692,7 +742,8 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
                 except Exception as e:
                     logging.error(f"Error decrypting price: {e}")
                     decrypted_price = "N/A"
-                self.sales_tree.insert('', 'end', values=(row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4]))
+                self.sales_tree.insert('', 'end', values=(
+                row[0], row[1], row[2], f"${decrypted_price}" if decrypted_price != "N/A" else "N/A", row[4]))
             logging.info("Sales report refreshed successfully")
         except sqlite3.Error as e:
             logging.error(f"Error refreshing sales report: {e}")
@@ -727,7 +778,9 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
                     csvwriter.writerow(['ID', 'Item', 'Quantity', 'Total Price', 'Date'])
                     for row in self.cursor.fetchall():
                         decrypted_price = self.decrypt_data(str(row[3]))
-                        csvwriter.writerow([row[0], row[1], row[2], f"${decrypted_price:.2f}" if decrypted_price != "N/A" else "N/A", row[4]])
+                        csvwriter.writerow(
+                            [row[0], row[1], row[2], f"${decrypted_price:.2f}" if decrypted_price != "N/A" else "N/A",
+                             row[4]])
                 messagebox.showinfo("Success", "Sales report exported successfully")
                 logging.info(f"Sales report exported to {filename}")
         except (sqlite3.Error, IOError) as e:
@@ -809,8 +862,9 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
             hire_date = simpledialog.askstring("Add Employee", "Enter hire date (YYYY-MM-DD):")
             salary = simpledialog.askfloat("Add Employee", "Enter employee salary:")
             try:
-                self.cursor.execute(f"INSERT INTO {EMPLOYEES_TABLE} (name, position, hire_date, salary) VALUES (?, ?, ?, ?)",
-                                    (name, position, hire_date, salary))
+                self.cursor.execute(
+                    f"INSERT INTO {EMPLOYEES_TABLE} (name, position, hire_date, salary) VALUES (?, ?, ?, ?)",
+                    (name, position, hire_date, salary))
                 self.conn.commit()
                 messagebox.showinfo("Success", "Employee added successfully")
                 self.refresh_employees()
@@ -923,11 +977,13 @@ WHERE LOWER({INVENTORY_TABLE}.item_name) LIKE ? OR LOWER({INVENTORY_TABLE}.categ
                 return "Error parsing colors"
         return ""
 
+
 def cleanup():
     """Clean up function to be called when the program exits."""
     if hasattr(ClothingStoreDB, 'conn') and ClothingStoreDB.conn:
         ClothingStoreDB.conn.close()
         logging.info("Database connection closed")
+
 
 atexit.register(cleanup)
 

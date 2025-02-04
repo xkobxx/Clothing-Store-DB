@@ -1305,3 +1305,599 @@
 2025-02-04 01:53:59,213 - INFO - Sales report refreshed successfully
 2025-02-04 01:53:59,215 - INFO - Customers list refreshed successfully
 2025-02-04 01:53:59,216 - INFO - Employees list refreshed successfully
+2025-02-04 04:13:11,610 - INFO - Database tables created successfully
+2025-02-04 04:13:11,610 - INFO - Inventory sizes updated successfully
+2025-02-04 04:13:11,662 - ERROR - Decryption error: 
+2025-02-04 04:13:11,698 - ERROR - Decryption error: 
+2025-02-04 04:13:11,734 - ERROR - Decryption error: 
+2025-02-04 04:13:11,768 - ERROR - Decryption error: 
+2025-02-04 04:13:11,804 - ERROR - Decryption error: 
+2025-02-04 04:13:11,839 - ERROR - Decryption error: 
+2025-02-04 04:13:11,872 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 04:13:11,905 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 04:13:11,938 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 04:13:11,971 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 04:13:11,972 - ERROR - Decryption error: Incorrect padding
+2025-02-04 04:13:12,006 - INFO - Inventory refreshed successfully
+2025-02-04 04:13:12,010 - INFO - Sales report refreshed successfully
+2025-02-04 04:13:12,011 - INFO - Customers list refreshed successfully
+2025-02-04 04:13:12,013 - INFO - Employees list refreshed successfully
+2025-02-04 05:28:53,275 - INFO - Database tables created successfully
+2025-02-04 05:28:53,277 - INFO - Inventory sizes updated successfully
+2025-02-04 05:28:53,326 - ERROR - Decryption error: 
+2025-02-04 05:28:53,360 - ERROR - Decryption error: 
+2025-02-04 05:28:53,392 - ERROR - Decryption error: 
+2025-02-04 05:28:53,422 - ERROR - Decryption error: 
+2025-02-04 05:28:53,454 - ERROR - Decryption error: 
+2025-02-04 05:28:53,485 - ERROR - Decryption error: 
+2025-02-04 05:28:53,517 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:28:53,548 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:28:53,580 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:28:53,617 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:28:53,617 - ERROR - Decryption error: Incorrect padding
+2025-02-04 05:28:53,655 - INFO - Inventory refreshed successfully
+2025-02-04 05:28:53,658 - INFO - Sales report refreshed successfully
+2025-02-04 05:28:53,659 - INFO - Customers list refreshed successfully
+2025-02-04 05:28:53,660 - INFO - Employees list refreshed successfully
+2025-02-04 05:29:47,786 - INFO - Database tables created successfully
+2025-02-04 05:29:47,786 - INFO - Inventory sizes updated successfully
+2025-02-04 05:29:47,831 - ERROR - Decryption error: 
+2025-02-04 05:29:47,866 - ERROR - Decryption error: 
+2025-02-04 05:29:47,898 - ERROR - Decryption error: 
+2025-02-04 05:29:47,931 - ERROR - Decryption error: 
+2025-02-04 05:29:47,963 - ERROR - Decryption error: 
+2025-02-04 05:29:47,995 - ERROR - Decryption error: 
+2025-02-04 05:29:48,027 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:29:48,061 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:29:48,094 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:29:48,126 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:29:48,127 - ERROR - Decryption error: Incorrect padding
+2025-02-04 05:29:48,159 - INFO - Inventory refreshed successfully
+2025-02-04 05:29:48,164 - INFO - Sales report refreshed successfully
+2025-02-04 05:29:48,165 - INFO - Customers list refreshed successfully
+2025-02-04 05:29:48,166 - INFO - Employees list refreshed successfully
+2025-02-04 05:51:10,879 - ERROR - Decryption error: 
+2025-02-04 05:51:10,911 - ERROR - Decryption error: 
+2025-02-04 05:51:10,944 - ERROR - Decryption error: 
+2025-02-04 05:51:10,976 - ERROR - Decryption error: 
+2025-02-04 05:51:11,009 - ERROR - Decryption error: 
+2025-02-04 05:51:11,042 - ERROR - Decryption error: 
+2025-02-04 05:51:11,075 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:51:11,108 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:51:11,140 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:51:11,173 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 05:51:11,173 - ERROR - Decryption error: Incorrect padding
+2025-02-04 05:51:11,239 - INFO - Inventory refreshed successfully
+2025-02-04 05:51:11,239 - INFO - New item added: Loose Baggy Rigid Washed Black
+2025-02-04 06:39:34,699 - INFO - Database tables created successfully
+2025-02-04 06:39:34,699 - INFO - Inventory sizes updated successfully
+2025-02-04 06:39:34,745 - ERROR - Decryption error: 
+2025-02-04 06:39:34,780 - ERROR - Decryption error: 
+2025-02-04 06:39:34,814 - ERROR - Decryption error: 
+2025-02-04 06:39:34,848 - ERROR - Decryption error: 
+2025-02-04 06:39:34,882 - ERROR - Decryption error: 
+2025-02-04 06:39:34,918 - ERROR - Decryption error: 
+2025-02-04 06:39:34,960 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:34,996 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,031 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,065 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,066 - ERROR - Decryption error: Incorrect padding
+2025-02-04 06:39:35,135 - INFO - Inventory refreshed successfully
+2025-02-04 06:39:35,173 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,207 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,242 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,288 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,327 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,375 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,425 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,459 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,493 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,526 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,565 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,600 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,635 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,669 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,707 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,744 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,789 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,823 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:35,823 - INFO - Sales report refreshed successfully
+2025-02-04 06:39:35,825 - INFO - Customers list refreshed successfully
+2025-02-04 06:39:35,827 - INFO - Employees list refreshed successfully
+2025-02-04 06:39:59,054 - INFO - Database tables created successfully
+2025-02-04 06:39:59,055 - INFO - Inventory sizes updated successfully
+2025-02-04 06:39:59,104 - ERROR - Decryption error: 
+2025-02-04 06:39:59,142 - ERROR - Decryption error: 
+2025-02-04 06:39:59,187 - ERROR - Decryption error: 
+2025-02-04 06:39:59,227 - ERROR - Decryption error: 
+2025-02-04 06:39:59,266 - ERROR - Decryption error: 
+2025-02-04 06:39:59,304 - ERROR - Decryption error: 
+2025-02-04 06:39:59,343 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,384 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,424 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,463 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,463 - ERROR - Decryption error: Incorrect padding
+2025-02-04 06:39:59,546 - INFO - Inventory refreshed successfully
+2025-02-04 06:39:59,588 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,634 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,674 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,711 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,749 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,786 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,824 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,862 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,900 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,936 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:39:59,973 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,012 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,052 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,091 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,134 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,173 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,210 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,247 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:00,247 - INFO - Sales report refreshed successfully
+2025-02-04 06:40:00,250 - INFO - Customers list refreshed successfully
+2025-02-04 06:40:00,251 - INFO - Employees list refreshed successfully
+2025-02-04 06:40:04,173 - ERROR - Decryption error: 
+2025-02-04 06:40:04,210 - ERROR - Decryption error: 
+2025-02-04 06:40:04,246 - ERROR - Decryption error: 
+2025-02-04 06:40:04,284 - ERROR - Decryption error: 
+2025-02-04 06:40:04,321 - ERROR - Decryption error: 
+2025-02-04 06:40:04,357 - ERROR - Decryption error: 
+2025-02-04 06:40:04,407 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:04,448 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:04,489 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:04,528 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 06:40:04,528 - ERROR - Decryption error: Incorrect padding
+2025-02-04 06:40:04,604 - INFO - Inventory refreshed successfully
+2025-02-04 11:17:45,956 - INFO - Database tables created successfully
+2025-02-04 11:17:45,957 - INFO - Inventory sizes updated successfully
+2025-02-04 11:17:46,018 - ERROR - Decryption error: 
+2025-02-04 11:17:46,051 - ERROR - Decryption error: 
+2025-02-04 11:17:46,082 - ERROR - Decryption error: 
+2025-02-04 11:17:46,114 - ERROR - Decryption error: 
+2025-02-04 11:17:46,145 - ERROR - Decryption error: 
+2025-02-04 11:17:46,177 - ERROR - Decryption error: 
+2025-02-04 11:17:46,178 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 11:17:46,209 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,242 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,273 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,274 - ERROR - Decryption error: Incorrect padding
+2025-02-04 11:17:46,338 - INFO - Inventory refreshed successfully
+2025-02-04 11:17:46,374 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,406 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,438 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,471 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,502 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,535 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,567 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,601 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,634 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,666 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,697 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,730 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,762 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,795 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,826 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,858 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,890 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,923 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,955 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:46,989 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:47,022 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:47,054 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:17:47,054 - INFO - Sales report refreshed successfully
+2025-02-04 11:17:47,055 - INFO - Customers list refreshed successfully
+2025-02-04 11:17:47,056 - INFO - Employees list refreshed successfully
+2025-02-04 11:18:25,191 - ERROR - Decryption error: 
+2025-02-04 11:18:25,222 - ERROR - Decryption error: 
+2025-02-04 11:18:25,252 - ERROR - Decryption error: 
+2025-02-04 11:18:25,283 - ERROR - Decryption error: 
+2025-02-04 11:18:25,314 - ERROR - Decryption error: 
+2025-02-04 11:18:25,344 - ERROR - Decryption error: 
+2025-02-04 11:18:25,344 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 11:18:25,375 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:18:25,406 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:18:25,436 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:18:25,436 - ERROR - Decryption error: Incorrect padding
+2025-02-04 11:18:25,498 - INFO - Inventory refreshed successfully
+2025-02-04 11:26:18,911 - ERROR - Decryption error: 
+2025-02-04 11:26:18,943 - ERROR - Decryption error: 
+2025-02-04 11:26:18,975 - ERROR - Decryption error: 
+2025-02-04 11:26:19,008 - ERROR - Decryption error: 
+2025-02-04 11:26:19,041 - ERROR - Decryption error: 
+2025-02-04 11:26:19,074 - ERROR - Decryption error: 
+2025-02-04 11:26:19,075 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 11:26:19,107 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:26:19,140 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:26:19,171 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:26:19,172 - ERROR - Decryption error: Incorrect padding
+2025-02-04 11:26:19,269 - INFO - Inventory refreshed successfully
+2025-02-04 11:26:19,269 - INFO - New item added: French Connection Slim Fit Grey Suit
+2025-02-04 11:32:36,650 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 11:32:44,630 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 11:39:54,220 - ERROR - Decryption error: 
+2025-02-04 11:39:54,254 - ERROR - Decryption error: 
+2025-02-04 11:39:54,288 - ERROR - Decryption error: 
+2025-02-04 11:39:54,322 - ERROR - Decryption error: 
+2025-02-04 11:39:54,356 - ERROR - Decryption error: 
+2025-02-04 11:39:54,388 - ERROR - Decryption error: 
+2025-02-04 11:39:54,388 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 11:39:54,421 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:39:54,485 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 11:39:54,485 - ERROR - Decryption error: Incorrect padding
+2025-02-04 11:39:54,578 - INFO - Inventory refreshed successfully
+2025-02-04 11:39:54,578 - INFO - Item updated: ID 4
+2025-02-04 12:01:12,633 - INFO - Database tables created successfully
+2025-02-04 12:01:12,633 - INFO - Inventory sizes updated successfully
+2025-02-04 12:01:12,686 - ERROR - Decryption error: 
+2025-02-04 12:01:12,723 - ERROR - Decryption error: 
+2025-02-04 12:01:12,756 - ERROR - Decryption error: 
+2025-02-04 12:01:12,787 - ERROR - Decryption error: 
+2025-02-04 12:01:12,818 - ERROR - Decryption error: 
+2025-02-04 12:01:12,849 - ERROR - Decryption error: 
+2025-02-04 12:01:12,849 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 12:01:12,881 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:12,944 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:12,944 - ERROR - Decryption error: Incorrect padding
+2025-02-04 12:01:13,036 - INFO - Inventory refreshed successfully
+2025-02-04 12:01:13,071 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,102 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,133 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,165 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,196 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,228 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,261 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,294 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,326 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,359 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,391 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,422 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,455 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,487 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,518 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,549 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,582 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,613 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,645 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,676 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,708 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,740 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:01:13,740 - INFO - Sales report refreshed successfully
+2025-02-04 12:01:13,741 - INFO - Customers list refreshed successfully
+2025-02-04 12:01:13,743 - INFO - Employees list refreshed successfully
+2025-02-04 12:01:36,688 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 12:01:41,509 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 12:06:09,466 - ERROR - Decryption error: 
+2025-02-04 12:06:09,497 - ERROR - Decryption error: 
+2025-02-04 12:06:09,529 - ERROR - Decryption error: 
+2025-02-04 12:06:09,560 - ERROR - Decryption error: 
+2025-02-04 12:06:09,591 - ERROR - Decryption error: 
+2025-02-04 12:06:09,622 - ERROR - Decryption error: 
+2025-02-04 12:06:09,622 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 12:06:09,653 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:06:09,715 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:06:09,715 - ERROR - Decryption error: Incorrect padding
+2025-02-04 12:06:09,839 - INFO - Inventory refreshed successfully
+2025-02-04 12:06:09,839 - INFO - New item added: Superdry Socks
+2025-02-04 12:27:39,120 - INFO - Database tables created successfully
+2025-02-04 12:27:39,120 - INFO - Inventory sizes updated successfully
+2025-02-04 12:27:39,162 - ERROR - Decryption error: 
+2025-02-04 12:27:39,194 - ERROR - Decryption error: 
+2025-02-04 12:27:39,227 - ERROR - Decryption error: 
+2025-02-04 12:27:39,258 - ERROR - Decryption error: 
+2025-02-04 12:27:39,292 - ERROR - Decryption error: 
+2025-02-04 12:27:39,328 - ERROR - Decryption error: 
+2025-02-04 12:27:39,328 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 12:27:39,362 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,431 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,431 - ERROR - Decryption error: Incorrect padding
+2025-02-04 12:27:39,561 - INFO - Inventory refreshed successfully
+2025-02-04 12:27:39,599 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,631 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,663 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,695 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,727 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,760 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,793 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,826 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,857 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,889 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,920 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,952 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:39,983 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,014 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,045 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,076 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,108 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,139 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,170 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,202 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,233 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,263 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:27:40,263 - INFO - Sales report refreshed successfully
+2025-02-04 12:27:40,267 - INFO - Customers list refreshed successfully
+2025-02-04 12:27:40,268 - INFO - Employees list refreshed successfully
+2025-02-04 12:36:07,006 - INFO - Database tables created successfully
+2025-02-04 12:36:07,006 - INFO - Inventory sizes updated successfully
+2025-02-04 12:36:07,048 - ERROR - Decryption error: 
+2025-02-04 12:36:07,079 - ERROR - Decryption error: 
+2025-02-04 12:36:07,110 - ERROR - Decryption error: 
+2025-02-04 12:36:07,141 - ERROR - Decryption error: 
+2025-02-04 12:36:07,173 - ERROR - Decryption error: 
+2025-02-04 12:36:07,207 - ERROR - Decryption error: 
+2025-02-04 12:36:07,207 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 12:36:07,242 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,307 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,308 - ERROR - Decryption error: Incorrect padding
+2025-02-04 12:36:07,436 - INFO - Inventory refreshed successfully
+2025-02-04 12:36:07,471 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,503 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,534 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,566 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,598 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,631 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,666 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,700 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,734 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,765 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,798 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,831 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,864 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,897 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,930 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,962 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:07,995 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:08,027 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:08,060 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:08,092 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:08,125 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:08,158 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:36:08,158 - INFO - Sales report refreshed successfully
+2025-02-04 12:36:08,159 - INFO - Customers list refreshed successfully
+2025-02-04 12:36:08,160 - INFO - Employees list refreshed successfully
+2025-02-04 12:56:32,684 - ERROR - Decryption error: 
+2025-02-04 12:56:32,715 - ERROR - Decryption error: 
+2025-02-04 12:56:32,750 - ERROR - Decryption error: 
+2025-02-04 12:56:32,782 - ERROR - Decryption error: 
+2025-02-04 12:56:32,814 - ERROR - Decryption error: 
+2025-02-04 12:56:32,845 - ERROR - Decryption error: 
+2025-02-04 12:56:32,846 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 12:56:32,878 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:56:32,940 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 12:56:32,940 - ERROR - Decryption error: Incorrect padding
+2025-02-04 12:56:33,096 - INFO - Inventory refreshed successfully
+2025-02-04 12:56:33,096 - INFO - New item added: Denim Ladies Jeans
+2025-02-04 13:27:58,220 - INFO - Database tables created successfully
+2025-02-04 13:27:58,221 - INFO - Inventory sizes updated successfully
+2025-02-04 13:27:58,279 - ERROR - Decryption error: 
+2025-02-04 13:27:58,312 - ERROR - Decryption error: 
+2025-02-04 13:27:58,344 - ERROR - Decryption error: 
+2025-02-04 13:27:58,377 - ERROR - Decryption error: 
+2025-02-04 13:27:58,410 - ERROR - Decryption error: 
+2025-02-04 13:27:58,443 - ERROR - Decryption error: 
+2025-02-04 13:27:58,443 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:27:58,476 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,542 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,542 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:27:58,704 - INFO - Inventory refreshed successfully
+2025-02-04 13:27:58,742 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,776 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,809 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,842 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,875 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,909 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,942 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:58,977 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,011 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,044 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,074 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,104 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,135 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,168 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,201 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,234 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,267 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,300 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,333 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,366 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,399 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,432 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,465 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,497 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:27:59,497 - INFO - Sales report refreshed successfully
+2025-02-04 13:27:59,499 - INFO - Customers list refreshed successfully
+2025-02-04 13:27:59,501 - INFO - Employees list refreshed successfully
+2025-02-04 13:29:06,735 - ERROR - Decryption error: 
+2025-02-04 13:29:06,766 - ERROR - Decryption error: 
+2025-02-04 13:29:06,796 - ERROR - Decryption error: 
+2025-02-04 13:29:06,826 - ERROR - Decryption error: 
+2025-02-04 13:29:06,858 - ERROR - Decryption error: 
+2025-02-04 13:29:06,889 - ERROR - Decryption error: 
+2025-02-04 13:29:06,889 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:29:06,920 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:29:06,982 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:29:06,983 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:29:07,140 - INFO - Inventory refreshed successfully
+2025-02-04 13:30:52,569 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 13:31:32,622 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:31:32,654 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:31:32,718 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:31:32,718 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:31:32,879 - INFO - Inventory refreshed successfully
+2025-02-04 13:31:32,879 - INFO - Item updated: ID 2
+2025-02-04 13:32:07,966 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 13:32:13,018 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:32:13,051 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:13,114 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:13,114 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:32:13,271 - INFO - Inventory refreshed successfully
+2025-02-04 13:32:13,271 - INFO - Item deleted: ID 2
+2025-02-04 13:32:24,232 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,263 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,294 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,325 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,356 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,387 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,418 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,449 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,481 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,513 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,544 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,576 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,608 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,639 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,672 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,703 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,736 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,768 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,800 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,831 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,863 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,895 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,927 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,959 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:32:24,959 - INFO - Sales report refreshed successfully
+2025-02-04 13:32:33,776 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:33:42,371 - INFO - Customers list refreshed successfully
+2025-02-04 13:33:42,371 - INFO - New customer added: Alban Giro
+2025-02-04 13:34:11,317 - INFO - Customers list refreshed successfully
+2025-02-04 13:34:15,398 - INFO - Employees list refreshed successfully
+2025-02-04 13:34:57,711 - INFO - Employees list refreshed successfully
+2025-02-04 13:34:57,711 - INFO - New employee added: Derick Statton
+2025-02-04 13:35:02,101 - INFO - Employees list refreshed successfully
+2025-02-04 13:39:05,339 - INFO - Employees list refreshed successfully
+2025-02-04 13:39:42,027 - INFO - Employees list refreshed successfully
+2025-02-04 13:39:42,027 - INFO - New employee added: Amara killson
+2025-02-04 13:40:28,121 - INFO - Customers list refreshed successfully
+2025-02-04 13:40:28,121 - INFO - New customer added: David Holly
+2025-02-04 13:40:31,470 - INFO - Customers list refreshed successfully
+2025-02-04 13:41:00,648 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:41:24,228 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 13:42:18,781 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:42:18,814 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:42:18,877 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:42:18,877 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:42:19,034 - INFO - Inventory refreshed successfully
+2025-02-04 13:42:19,034 - INFO - Item updated: ID 4
+2025-02-04 13:42:26,356 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 13:42:29,272 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:42:29,304 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:42:29,337 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:42:29,337 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:42:29,494 - INFO - Inventory refreshed successfully
+2025-02-04 13:42:29,494 - INFO - Item deleted: ID 4
+2025-02-04 13:43:08,444 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:43:08,477 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:08,509 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:08,509 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:43:08,697 - INFO - Inventory refreshed successfully
+2025-02-04 13:43:08,697 - INFO - New item added: Ripped Blue Jeans Ladies
+2025-02-04 13:43:28,563 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:43:28,598 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:28,629 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:28,629 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:43:28,816 - INFO - Inventory refreshed successfully
+2025-02-04 13:43:28,979 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:43:29,013 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:29,044 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:29,044 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:43:29,233 - INFO - Inventory refreshed successfully
+2025-02-04 13:43:29,420 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:43:29,455 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:29,486 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:43:29,486 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:43:29,672 - INFO - Inventory refreshed successfully
+2025-02-04 13:53:06,894 - INFO - Database tables created successfully
+2025-02-04 13:53:06,895 - INFO - Inventory sizes updated successfully
+2025-02-04 13:53:06,901 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:53:06,952 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:06,993 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:06,994 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:53:07,219 - INFO - Inventory refreshed successfully
+2025-02-04 13:53:07,258 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,292 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,327 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,361 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,396 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,430 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,464 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,500 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,535 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,570 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,604 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,638 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,672 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,706 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,740 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,774 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,807 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,841 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,876 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,910 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,944 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:07,981 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:08,016 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:08,052 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:53:08,052 - INFO - Sales report refreshed successfully
+2025-02-04 13:53:08,053 - INFO - Customers list refreshed successfully
+2025-02-04 13:53:08,054 - INFO - Employees list refreshed successfully
+2025-02-04 13:53:34,757 - INFO - Employees list refreshed successfully
+2025-02-04 13:53:35,147 - INFO - Employees list refreshed successfully
+2025-02-04 13:54:11,786 - INFO - Employees list refreshed successfully
+2025-02-04 13:54:11,786 - INFO - New employee added: Mary Hison
+2025-02-04 13:55:24,677 - INFO - Employees list refreshed successfully
+2025-02-04 13:55:56,049 - INFO - Employees list refreshed successfully
+2025-02-04 13:55:56,049 - INFO - New employee added: Dean Rose
+2025-02-04 13:56:45,076 - INFO - Customers list refreshed successfully
+2025-02-04 13:56:45,077 - INFO - New customer added: Francis Gamu
+2025-02-04 13:57:23,187 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:57:29,060 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 13:58:01,001 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:58:01,035 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:58:01,071 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:58:01,288 - INFO - Inventory refreshed successfully
+2025-02-04 13:58:01,288 - INFO - Item updated: ID 5
+2025-02-04 13:58:40,289 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 13:58:47,723 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 13:58:47,756 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 13:58:47,756 - ERROR - Decryption error: Incorrect padding
+2025-02-04 13:58:47,984 - INFO - Inventory refreshed successfully
+2025-02-04 13:58:47,984 - INFO - Item deleted: ID 5
+2025-02-04 14:00:06,824 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:00:06,861 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:00:06,861 - ERROR - Decryption error: Incorrect padding
+2025-02-04 14:00:07,126 - INFO - Inventory refreshed successfully
+2025-02-04 14:00:07,126 - INFO - New item added: Tattered Denim Jeans
+2025-02-04 14:00:13,954 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:00:13,994 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:00:13,995 - ERROR - Decryption error: Incorrect padding
+2025-02-04 14:00:14,250 - INFO - Inventory refreshed successfully
+2025-02-04 14:25:22,697 - INFO - Employees list refreshed successfully
+2025-02-04 14:25:52,051 - INFO - Employees list refreshed successfully
+2025-02-04 14:25:52,051 - INFO - New employee added: Ama Rose
+2025-02-04 14:26:10,915 - INFO - Customers list refreshed successfully
+2025-02-04 14:26:36,347 - INFO - Customers list refreshed successfully
+2025-02-04 14:26:36,347 - INFO - New customer added: Dean Ambrose
+2025-02-04 14:27:08,283 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:27:13,570 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 14:27:59,429 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:27:59,467 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:27:59,777 - INFO - Inventory refreshed successfully
+2025-02-04 14:27:59,777 - INFO - Item updated: ID 6
+2025-02-04 14:28:17,664 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4
+2025-02-04 14:28:22,643 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:28:22,680 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:28:22,953 - INFO - Inventory refreshed successfully
+2025-02-04 14:28:22,953 - INFO - Item deleted: ID 6
+2025-02-04 14:29:14,380 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:29:14,417 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:29:14,722 - INFO - Inventory refreshed successfully
+2025-02-04 14:29:14,722 - INFO - New item added: Faded Ladies Top
+2025-02-04 14:29:22,537 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:29:22,577 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:29:22,883 - INFO - Inventory refreshed successfully
+2025-02-04 14:29:23,474 - ERROR - Decryption error: Invalid base64-encoded string: number of data characters (17) cannot be 1 more than a multiple of 4
+2025-02-04 14:29:23,511 - ERROR - Decryption error: initialization_vector must be between 8 and 128 bytes (64 and 1024 bits).
+2025-02-04 14:29:23,817 - INFO - Inventory refreshed successfully

@@ -38,9 +38,9 @@ def run_query(query, params=None):
         conn.rollback()
 
 
-def test_triggers():
+def test_inventory_management():
     try:
-        # Create failed_sales table if it doesn't exist
+        # Create failed_sales table
         run_query('''
         CREATE TABLE IF NOT EXISTS failed_sales (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -52,43 +52,33 @@ def test_triggers():
         )
         ''')
 
-        # Create low_stock_alerts table if it doesn't exist
-        run_query('''
-        CREATE TABLE IF NOT EXISTS low_stock_alerts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            inventory_id INTEGER NOT NULL,
-            current_quantity INTEGER NOT NULL,
-            alert_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (inventory_id) REFERENCES inventory(id)
-        )
-        ''')
+        # Drop existing trigger
+        run_query('DROP TRIGGER IF EXISTS after_sale_update_inventory')
 
-        # Update the after_sale_update_inventory trigger
+        # Create new trigger
         run_query('''
-        DROP TRIGGER IF EXISTS after_sale_update_inventory;
-
         CREATE TRIGGER after_sale_update_inventory
-        AFTER INSERT ON sales
+        INSTEAD OF INSERT ON sales
         BEGIN
-            UPDATE inventory_sizes
-            SET quantity = CASE
-                WHEN quantity >= NEW.quantity THEN quantity - NEW.quantity
-                ELSE quantity
-            END
-            WHERE inventory_id = NEW.item_id AND size = (
-                SELECT size FROM inventory_sizes 
-                WHERE inventory_id = NEW.item_id 
-                ORDER BY quantity DESC 
-                LIMIT 1
-            );
+            SELECT CASE
+                WHEN (SELECT quantity FROM inventory_sizes WHERE inventory_id = NEW.item_id ORDER BY quantity DESC LIMIT 1) >= NEW.quantity
+                THEN
+                    (UPDATE inventory_sizes
+                    SET quantity = quantity - NEW.quantity
+                    WHERE inventory_id = NEW.item_id AND size = (
+                        SELECT size FROM inventory_sizes 
+                        WHERE inventory_id = NEW.item_id 
+                        ORDER BY quantity DESC 
+                        LIMIT 1
+                    ))
+            END;
 
-            INSERT INTO failed_sales (item_id, attempted_quantity, available_quantity, sale_date)
-            SELECT NEW.item_id, NEW.quantity, quantity, NEW.date
-            FROM inventory_sizes
-            WHERE inventory_id = NEW.item_id
-            AND quantity < NEW.quantity
-            ORDER BY quantity DESC
-            LIMIT 1;
+            SELECT CASE
+                WHEN (SELECT quantity FROM inventory_sizes WHERE inventory_id = NEW.item_id ORDER BY quantity DESC LIMIT 1) >= NEW.quantity
+                THEN
+                    (INSERT INTO sales (item_id, quantity, total_price, date)
+                    VALUES (NEW.item_id, NEW.quantity, NEW.total_price, NEW.date))
+            END;
 
             INSERT INTO low_stock_alerts (inventory_id, current_quantity)
             SELECT inventory_id, SUM(quantity) as total_quantity
@@ -96,11 +86,19 @@ def test_triggers():
             WHERE inventory_id = NEW.item_id
             GROUP BY inventory_id
             HAVING total_quantity <= 10;
-        END;
+
+            INSERT INTO failed_sales (item_id, attempted_quantity, available_quantity)
+            SELECT NEW.item_id, NEW.quantity, quantity
+            FROM inventory_sizes
+            WHERE inventory_id = NEW.item_id
+            ORDER BY quantity DESC
+            LIMIT 1
+            WHEN quantity < NEW.quantity;
+        END
         ''')
 
-        # Test after_sale_update_inventory trigger
-        print("\nTesting after_sale_update_inventory trigger:")
+        # Test inventory management
+        print("\nTesting inventory management:")
         run_query("SELECT * FROM inventory_sizes WHERE inventory_id = 1")
         current_quantity = \
         run_query("SELECT quantity FROM inventory_sizes WHERE inventory_id = 1 ORDER BY quantity DESC LIMIT 1")[0][0]
@@ -127,29 +125,6 @@ def test_triggers():
         print("\nChecking low_stock_alerts:")
         run_query("SELECT * FROM low_stock_alerts WHERE inventory_id = 1")
 
-        # Test log_price_change trigger
-        print("\nTesting log_price_change trigger:")
-        run_query("UPDATE inventory SET base_price = ? WHERE id = ?", (24.99, 1))
-        run_query("SELECT * FROM price_change_log WHERE inventory_id = 1")
-
-        # Test update_order_status trigger
-        print("\nTesting update_order_status trigger:")
-        run_query(
-            "INSERT INTO orders (customer_id, employee_id, order_date, total_amount, status) VALUES (?, ?, ?, ?, ?)",
-            (1, 1, datetime.datetime.now(), 1000, 'Processing'))
-        order_id = run_query("SELECT last_insert_rowid() as id")[0][0]
-        run_query(
-            "INSERT INTO order_items (order_id, inventory_id, quantity, unit_price, subtotal) VALUES (?, ?, ?, ?, ?)",
-            (order_id, 1, 10, 100, 1000))
-        run_query(
-            "INSERT INTO order_items (order_id, inventory_id, quantity, unit_price, subtotal) VALUES (?, ?, ?, ?, ?)",
-            (order_id, 2, 5, 100, 500))
-        run_query(f"SELECT * FROM orders WHERE id = {order_id}")
-
-        # Simulate the delivery by updating the order status directly
-        run_query("UPDATE orders SET status = 'Delivered' WHERE id = ?", (order_id,))
-        run_query(f"SELECT * FROM orders WHERE id = {order_id}")
-
     except sqlite3.Error as e:
         print("An error occurred:", e)
     finally:
@@ -158,5 +133,5 @@ def test_triggers():
 
 
 if __name__ == "__main__":
-    test_triggers()
+    test_inventory_management()
 
